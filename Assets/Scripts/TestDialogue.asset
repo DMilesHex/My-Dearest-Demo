@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482afdea677fec04381c562d308bac77, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  _dialogueLine:
+  - _npcName: 0
+    _lineText: "Ah! Hello, Habiki. I\u2019m Manami. "
+  - _npcName: 3
+    _lineText: '*Habiki timidly looks at Manami, though a faint smile forms.*'
+  - _npcName: 1
+    _lineText: . . .H-Hi Manami.
+  - _npcName: 0
+    _lineText: " I simply adore your clip, by the way. It\u2019s so cute!"
+  - _npcName: 3
+    _lineText: '*Habiki grows visibly flushed, her smile only growing. She simply
+      bows her head in gratitude.*'
+  - _npcName: 3
+    _lineText: "*Ryo smiles in kin. Things seem to be going smoothly.*\r\n"
+  - _npcName: 2
+    _lineText: Tell her a bit about yourself, Habiki.
+  - _npcName: 1
+    _lineText: ' I um. . .I-i really like. . .Birds.'
+  - _npcName: 3
+    _lineText: "*Habiki swallows, clearly nervous. She composes herself the best as
+      she could.*\r\n"
+  - _npcName: 1
+    _lineText: "I often am o-out by t-t-the sakura tree b-behind the school; there\u2019s.
+      . .A lot of beautiful birds to watch t-. . .There. "

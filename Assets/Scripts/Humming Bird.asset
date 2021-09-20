@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d3c15f00c69bd4a87ad0596efe54aa, type: 3}
+  m_Name: Humming Bird
+  m_EditorClassIdentifier: 
+  type: 0
+  name: Humming Bird Charm
+  weaponType: 2
+  equipped: 1
+  weaponprefab: {fileID: 3485164741745805636, guid: 52cbb41e8295b304a9378407678aed06,
+    type: 3}
