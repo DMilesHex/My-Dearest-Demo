@@ -16,3 +16,10 @@ MonoBehaviour:
   - _npcName: 2
     _lineText: "Oh hey Manami. This is Habiki. I\u2019ve been meaning to introduce
       you to each other - I think you\u2019d make pretty swell friends."
+  responses:
+  - responseText: Nice
+    dialogueObject: {fileID: 11400000, guid: 23a0e79cc4b9b8146be292851ee823f9, type: 2}
+  - responseText: Mean
+    dialogueObject: {fileID: 0}
+  - responseText: Awkward
+    dialogueObject: {fileID: 0}

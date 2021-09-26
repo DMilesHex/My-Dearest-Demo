@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482afdea677fec04381c562d308bac77, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
+  repFactor: 1
   _dialogueLine:
   - _npcName: 0
     _lineText: "Ah! Hello, Habiki. I\u2019m Manami. "
@@ -36,3 +37,10 @@ MonoBehaviour:
   - _npcName: 1
     _lineText: "I often am o-out by t-t-the sakura tree b-behind the school; there\u2019s.
       . .A lot of beautiful birds to watch t-. . .There. "
+  responses:
+  - responseText: Nice
+    dialogueObject: {fileID: 11400000, guid: dc22ac3cd1ef6924fb703226a7a8ee7c, type: 2}
+  - responseText: Mean
+    dialogueObject: {fileID: 11400000, guid: 8701d21c5aba5904d912891ed714dfb6, type: 2}
+  - responseText: Awkward
+    dialogueObject: {fileID: 11400000, guid: f0e1bc6b82c4fa94db5729fa2f192002, type: 2}

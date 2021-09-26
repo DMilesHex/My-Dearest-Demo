@@ -69,6 +69,7 @@ public class Pickup : MonoBehaviour
         
         
     }
+
     void Shop(int progression)
     {
 

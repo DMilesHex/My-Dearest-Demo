@@ -61,6 +61,7 @@ public class DialogueInteract : MonoBehaviour
     public void Update()
     {
         rm.ChangeRep(rep);
+        
         if (choices)
         {
             option1.gameObject.SetActive(true);
@@ -109,13 +110,14 @@ public class DialogueInteract : MonoBehaviour
             rep++;
             
             StartCoroutine(DisplayDialogue(progression, 0));
-            progression++;
+            
             choices = true;
 
         }
         else
         {
-            animator.SetBool("IsOpen", false);
+            Debug.Log(progression);
+            //animator.SetBool("IsOpen", false);
             choices = false;
         }
     }
@@ -219,11 +221,11 @@ public class DialogueInteract : MonoBehaviour
                     Debug.Log(nice[element].DialogueLines[j]);
                     dialogueText.text = nice[element].DialogueLines[j].LineText;
                     nameText.text = nice[element].DialogueLines[j]._npcName.ToString();
-                    CheckValue();
+                    
                     yield return new WaitForSeconds(5f);
+                progression++;
 
-
-                }
+            }
 
 
             }
@@ -264,8 +266,8 @@ public class DialogueInteract : MonoBehaviour
             {
                 for (int h = 0; h < intro.DialogueLines.Count; h++)
                 {
-
-                    Debug.Log(intro.DialogueLines[h]);
+                animator.SetBool("IsOpen", true);
+                Debug.Log(intro.DialogueLines[h]);
                     dialogueText.text = intro.DialogueLines[h].LineText;
                     nameText.text = intro.DialogueLines[h]._npcName.ToString();
                     choices = true;
@@ -340,15 +342,15 @@ public class DialogueInteract : MonoBehaviour
                 }
                 else
                 {
-                    option1.gameObject.SetActive(false);
-                    option2.gameObject.SetActive(false);
-                    option3.gameObject.SetActive(false);
+                Debug.Log(progression);
                     StartCoroutine(DisplayDialogue(0, 3));
                 }
 
             }
+
             if(collisions.Count >= 2  && !giftGiving && collision.name == "Knife" && Input.GetAxis("Fire1") > 0)
             {
+            Debug.Log("dead");
             pl.sanity -= 10;
             Destroy(gameObject);
             }

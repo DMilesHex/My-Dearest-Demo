@@ -21,11 +21,13 @@ public class InventoryScript : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (student.removeGift)
         {
             RemoveItem(inventoryList[inventoryList.Count - 1], 2);
             pickup.DisableButton();
         }
+        */
     }
 
     public void OnClickButton(Weapon equippedWeapon)

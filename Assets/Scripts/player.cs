@@ -25,6 +25,11 @@ public class player : MonoBehaviour
     public UnityEvent Sanity;
     public InsanityEffects ie;
 
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
+
+    public I_Interactable interactable { get; set; }
+
     // Start is called before the first frame update
 
     public void Awake()
@@ -60,6 +65,12 @@ public class player : MonoBehaviour
         moneyText.text = "$" + money;
         
         ie.ChangeSanity(sanity);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+                interactable?.Interact(this);
+            
+        }
         
     }
 

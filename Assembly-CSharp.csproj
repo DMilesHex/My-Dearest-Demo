@@ -63,6 +63,12 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ClockAnimator.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueActivator.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueUI.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\I_Interactable.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Response.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\ResponseHandler.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\TypewriterEffect.cs" />
     <Compile Include="Assets\Scripts\DialogueInteract.cs" />
     <Compile Include="Assets\Scripts\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
@@ -78,6 +84,7 @@
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\RepMeter.cs" />
+    <Compile Include="Assets\Scripts\RivalIntro.cs" />
     <Compile Include="Assets\Scripts\Schedule.cs" />
     <Compile Include="Assets\Scripts\ScheduleController.cs" />
     <Compile Include="Assets\Scripts\Slot.cs" />
@@ -86,6 +93,23 @@
     <Compile Include="Assets\Scripts\TimeCycle.cs" />
     <Compile Include="Assets\Scripts\TreeScript.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Users/super/OneDrive/Documents/Unity/My Dearest Demo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
