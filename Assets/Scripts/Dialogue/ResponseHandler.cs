@@ -10,23 +10,32 @@ public class ResponseHandler : MonoBehaviour
     private GameObject buttonText;
     private DialogueUI dialogueUI;
     List<GameObject> tempResponseButtons = new List<GameObject>();
+    private ResponseEvent[] responseEvents;
+    public DialogueActivator dialogueActivator;
 
     private void Start()
     {
         dialogueUI = GetComponent<DialogueUI>();
+        
+    }
+
+    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    {
+        this.responseEvents = responseEvents;
     }
 
     public void ShowResponses(Response[] responses)
     {
         
-        foreach (Response response in responses)
+        for(int i = 0; i < responses.Length; i++)
         {
-            
+            Response response = responses[i];
+            int responseIndex = i;
             GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
             responseButton.gameObject.SetActive(true);
             responseButton.GetComponentInChildren<Text>().text = response.ResponseText;
             
-            responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response));
+            responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
 
             tempResponseButtons.Add(responseButton);
             
@@ -35,16 +44,32 @@ public class ResponseHandler : MonoBehaviour
         
     }
 
-    private void OnPickedResponse(Response response)
+    private void OnPickedResponse(Response response, int responseIndex)
     {
         responseContainer.gameObject.SetActive(false);
-        dialogueUI.ShowDialogue(response.DialogueObject);
+        
 
         foreach (GameObject button in tempResponseButtons)
         {
             Destroy(button);
         }
+
+        
+
+        if (responseEvents != null && responseIndex < responseEvents.Length)
+        {
+            responseEvents[responseIndex].OnPickedResponse?.Invoke();
+        }
+
+        responseEvents = null;
         tempResponseButtons.Clear();
 
+        if (response.DialogueObject)
+        {
+            dialogueUI.ShowDialogue(response.DialogueObject);
+            responseContainer.gameObject.SetActive(true);
+        }
+        else
+            dialogueUI.CloseDialogueBox();
     }
 }

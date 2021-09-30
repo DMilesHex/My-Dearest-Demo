@@ -8,11 +8,23 @@ public class DialogueActivator : MonoBehaviour, I_Interactable
     [SerializeField] private DialogueObject dialogueObject;
     public int rep;
 
+    public void UpdateDialogueObject(DialogueObject dialogueObject)
+    {
+        this.dialogueObject = dialogueObject;
+    }
+
     public void Interact(player pl)
     {
-
+        DialogueResponseEvents dialogue = GetComponent<DialogueResponseEvents>();
+        ResponseEvent[] responseEvents = dialogue.Events;
+        if (dialogue)
+        {
+            Debug.Log(responseEvents.Length);
+            pl.DialogueUI.AddResponseEvents(responseEvents);
+        }
         
         pl.DialogueUI.ShowDialogue(dialogueObject);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

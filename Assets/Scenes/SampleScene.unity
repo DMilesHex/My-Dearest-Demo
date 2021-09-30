@@ -892,6 +892,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4470553836682030931, guid: 2b2e0f725cef1934e875b65c9aefe56f,
         type: 3}
+    - target: {fileID: 1313299431602403945, guid: 7d0825ccce6c547448e2e5ce5c321277,
+        type: 3}
+      propertyPath: dialogueActivator
+      value: 
+      objectReference: {fileID: 1593953442}
     - target: {fileID: 2793828849530379482, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -1196,11 +1201,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6764827563373546855, guid: 25c80ae67dcea274b8617963def0ef2e,
+    - target: {fileID: 7293855656627743944, guid: 25c80ae67dcea274b8617963def0ef2e,
         type: 3}
-      propertyPath: rm
+      propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 321207394}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293855656627743944, guid: 25c80ae67dcea274b8617963def0ef2e,
+        type: 3}
+      propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c80ae67dcea274b8617963def0ef2e, type: 3}
 --- !u!1001 &8442565009604159287

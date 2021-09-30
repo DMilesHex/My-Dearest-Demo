@@ -64,9 +64,11 @@
     <Compile Include="Assets\Scripts\ClockAnimator.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueActivator.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueResponseEvents.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\Dialogue\I_Interactable.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Response.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\ResponseEvent.cs" />
     <Compile Include="Assets\Scripts\Dialogue\ResponseHandler.cs" />
     <Compile Include="Assets\Scripts\Dialogue\TypewriterEffect.cs" />
     <Compile Include="Assets\Scripts\DialogueInteract.cs" />

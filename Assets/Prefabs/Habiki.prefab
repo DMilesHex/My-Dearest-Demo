@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6764827563373546855}
   - component: {fileID: 6764827563373546851}
   - component: {fileID: 6764827563373546850}
+  - component: {fileID: 7293855656627743944}
   m_Layer: 9
   m_Name: Habiki
   m_TagString: rival
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: bbdd543933eb4af47b4096b33d038999, type: 2}
+  rep: 0
 --- !u!95 &6764827563373546851
 Animator:
   serializedVersion: 3
@@ -153,3 +155,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53bcadb8d41c2d438d78183f9b501d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7293855656627743944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764827563373546852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd32688b66b35447a019113fce13afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: bbdd543933eb4af47b4096b33d038999, type: 2}
+  events:
+  - name: Nice
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4619013818107908426, guid: 7d0825ccce6c547448e2e5ce5c321277,
+            type: 3}
+          m_MethodName: ShowDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 23a0e79cc4b9b8146be292851ee823f9,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: Mean
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: Awkward
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
