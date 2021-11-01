@@ -49,5 +49,21 @@ public class TimeCycle : MonoBehaviour
         }
     }
 
+    public void ClassTime()
+    {
+        if (hours <= 8)
+        {
+            hours = 13;
+            minutes = 0;
+            timePassed = 0;
+        }
+        else if (hours > 13 && hours < 16)
+        {
+            hours = 16;
+            minutes = 0;
+            timePassed = 0;
+        }
+    }
+
 
 }

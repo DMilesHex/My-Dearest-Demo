@@ -16,6 +16,7 @@ public class DialogueUI : MonoBehaviour
     public DialogueActivator dialogueActivator;
 
     [SerializeField] private RepMeter rm;
+    public player pl;
 
     public bool isOpen { get; private set; }
 
@@ -45,8 +46,11 @@ public class DialogueUI : MonoBehaviour
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
-        dialogueActivator.rep += dialogueObject.RepFactor;
-        rm.ChangeRep(dialogueActivator.rep);
+        if (pl.canGainRep)
+        {
+            dialogueActivator.rep += dialogueObject.RepFactor + pl.repIncrease;
+            rm.ChangeRep(dialogueActivator.rep);
+        }
 
         for (int i = 0; i < dialogueObject.DialogueLines.Count; i++)
         {

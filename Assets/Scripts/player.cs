@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -24,11 +25,21 @@ public class player : MonoBehaviour
     public float money;
     public UnityEvent Sanity;
     public InsanityEffects ie;
+    public int studyPoints;
 
     [SerializeField] private DialogueUI dialogueUI;
     public DialogueUI DialogueUI => dialogueUI;
+    public int repIncrease;
+    public Button button;
+
+    public GameObject responseContainer, secondResponseContainer;
+
+    public bool canGainRep = true;
 
     public I_Interactable interactable { get; set; }
+
+    public AddPoints add;
+    public int psych, bio;
 
     // Start is called before the first frame update
 
@@ -63,14 +74,24 @@ public class player : MonoBehaviour
         movement = new Vector2(Input.GetAxis("Horizontal"), 0);
         //image.gameObject.SetActive(false);
         moneyText.text = "$" + money;
-        
-        ie.ChangeSanity(sanity);
+
+        if (!SceneManager.GetActiveScene().name.Equals("House"))
+        {
+            ie.ChangeSanity(sanity);
+
+        }
+        else
+        {
+            button.interactable = studyPoints > 0;
+        }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
                 interactable?.Interact(this);
             
         }
+
+        
         
     }
 
@@ -94,5 +115,70 @@ public class player : MonoBehaviour
         }
     }
 
+    public void AddStudyPoints(int amount)
+    {
+        studyPoints += amount; 
+    }
 
+    public void ExtraRepPoints()
+    {
+        repIncrease = 5;
+    }
+
+    public void SanityRestore()
+    {
+        sanity = sanityMax;
+    }
+
+    public void MakeMoney()
+    {
+        responseContainer.SetActive(false);
+        secondResponseContainer.SetActive(true);
+    }
+
+    public void Tutor()
+    {
+        money += 100;
+    }
+
+    public void Job()
+    {
+        money += 30;
+    }
+
+    public void Shady()
+    {
+        float troubleChance = Random.value;
+        if (troubleChance > 0.3)
+        {
+            money += 50;
+        }
+        else if (troubleChance < 0.05)
+        {
+            Debug.Log("You were arrested. Game over");
+        }
+        else
+        {
+            canGainRep = false;
+        }
+    }
+
+    public void StatDist(int index)
+    {
+
+        if (studyPoints > 0)
+        {
+            studyPoints--;
+            switch (index)
+            {
+                case 0:
+                    psych++;
+                    break;
+                case 1:
+                    bio++;
+                    break;
+            }
+            add.Add(index);
+        }
+    }
 }
