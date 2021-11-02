@@ -262,8 +262,9 @@ MonoBehaviour:
 
     New Text'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e0b318bca1ef5ff4db20ebc5a7abcb8a, type: 2}
+  m_sharedMaterial: {fileID: 21069497422650218, guid: e0b318bca1ef5ff4db20ebc5a7abcb8a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2085,9 +2086,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 2793828849530379482}
-  test: {fileID: 11400000, guid: bbdd543933eb4af47b4096b33d038999, type: 2}
   dialogueBox: {fileID: 4920094347856230882}
   nameText: {fileID: 8663076729349772264}
+  dialogueActivator: {fileID: 0}
+  rm: {fileID: 0}
+  pl: {fileID: 0}
 --- !u!114 &4733474379670441095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,11 +2116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee79294eb0dd5c645918f4d716566f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 4479653072869474062, guid: c9c8317240f3ef74e864266d99e956e2,
-    type: 3}
   responseButtonTemplate: {fileID: 4470553836682030931, guid: 2b2e0f725cef1934e875b65c9aefe56f,
     type: 3}
   responseContainer: {fileID: 6925620794187124967}
+  dialogueActivator: {fileID: 0}
 --- !u!1 &4920094346769233399
 GameObject:
   m_ObjectHideFlags: 0

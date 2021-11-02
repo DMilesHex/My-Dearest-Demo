@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AddPoints.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ClockAnimator.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogueObject.cs" />
+    <Compile Include="Assets\Scripts\House.cs" />
     <Compile Include="Assets\Scripts\InsanityEffects.cs" />
     <Compile Include="Assets\Scripts\InventoryScript.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Assets\Scripts\ItemAssets.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\Scripts\NewInventory.cs" />
+    <Compile Include="Assets\Scripts\OpenStatScreen.cs" />
     <Compile Include="Assets\Scripts\PanelTint.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\player.cs" />

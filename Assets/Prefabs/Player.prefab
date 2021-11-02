@@ -223,6 +223,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ie: {fileID: 0}
+  studyPoints: 0
+  dialogueUI: {fileID: 0}
+  repIncrease: 0
+  button: {fileID: 0}
+  responseContainer: {fileID: 0}
+  secondResponseContainer: {fileID: 0}
+  canGainRep: 1
 --- !u!114 &5477995735012788437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +308,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
