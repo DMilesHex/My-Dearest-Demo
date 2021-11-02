@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":11.341018676757813,"y":0.4836028814315796,"z":2.0469841957092287},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":10.163930892944336,"orthographic":true}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":10.864043235778809,"y":9.215065956115723,"z":1.7906954288482667},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":35.8834114074707,"orthographic":true}
 >>>>>>> house
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":16.002649307250978,"y":10.435173034667969,"z":1.846176028251648},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":30.471996307373048,"orthographic":true}
+>>>>>>> Stashed changes
