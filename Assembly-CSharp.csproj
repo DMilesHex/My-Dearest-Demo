@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\PanelTint.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
+    <Compile Include="Assets\Scripts\PlayerTransporter.cs" />
     <Compile Include="Assets\Scripts\RepMeter.cs" />
     <Compile Include="Assets\Scripts\RivalIntro.cs" />
     <Compile Include="Assets\Scripts\Schedule.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Student.cs" />
     <Compile Include="Assets\Scripts\TimeCycle.cs" />
+    <Compile Include="Assets\Scripts\Transport.cs" />
     <Compile Include="Assets\Scripts\TreeScript.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

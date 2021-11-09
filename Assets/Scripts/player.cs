@@ -46,7 +46,11 @@ public class player : MonoBehaviour
     public void Awake()
     {
         sanity = sanityMax;
+<<<<<<< HEAD
         //DontDestroyOnLoad(gameObject);
+=======
+        DontDestroyOnLoad(gameObject);
+>>>>>>> transitions
     }
 
     public void Equip(int equipnumber)
