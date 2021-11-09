@@ -46,6 +46,7 @@ public class player : MonoBehaviour
     public void Awake()
     {
         sanity = sanityMax;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Equip(int equipnumber)
@@ -181,4 +182,6 @@ public class player : MonoBehaviour
             add.Add(index);
         }
     }
+
+
 }
