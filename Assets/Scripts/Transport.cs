@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Transport : MonoBehaviour
 {
-    public int indexToLoad;
+    public string indexToLoad;
 
     
 

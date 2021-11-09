@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public static class PlayerTransporter
 {
-    public static void LoadMap(int sceneIndex)
+    public static void LoadMap(string sceneIndex)
     {
         Debug.Log(sceneIndex);
-        Scene levelToLoad = SceneManager.GetSceneByBuildIndex(sceneIndex);
-        Debug.Log(levelToLoad.name);
-        if (levelToLoad != null) SceneManager.LoadScene(levelToLoad.name);
+        
+        
+         SceneManager.LoadScene(sceneIndex);
     }
 }
