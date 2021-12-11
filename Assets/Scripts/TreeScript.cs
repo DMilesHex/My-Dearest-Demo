@@ -33,6 +33,10 @@ public class TreeScript : MonoBehaviour
             pl.sanity -= 40;
             Destroy(collisions[0].gameObject);
         }
-      
+
+
+
+
+
     }
 }

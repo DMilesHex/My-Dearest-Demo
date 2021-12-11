@@ -16,3 +16,5 @@ MonoBehaviour:
   name: Hunting Knife
   weaponType: 0
   equipped: 1
+  weaponprefab: {fileID: 6447746052113049876, guid: 4a50864098545114c99648e1c2412623,
+    type: 3}

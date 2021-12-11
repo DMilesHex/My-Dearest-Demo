@@ -13,10 +13,11 @@ public class DialogueUI : MonoBehaviour
     private TypewriterEffect typewriterEffect;
     private ResponseHandler responseHandler;
 
-    public DialogueActivator dialogueActivator;
+    public List<DialogueActivator> dialogueActivator;
 
     [SerializeField] private RepMeter rm;
     public player pl;
+    
 
     public bool isOpen { get; private set; }
 
@@ -32,11 +33,21 @@ public class DialogueUI : MonoBehaviour
         
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject)
+    public void ShowDialogue(DialogueObject dialogueObject, int index)
     {
+        
         isOpen = true;
         dialogueBox.SetActive(true);
-        StartCoroutine(StepThroughDialogue(dialogueObject));
+        ClubRep(index);
+        StartCoroutine(StepThroughDialogue(dialogueObject, index));
+    }
+
+    
+    public void ClubRep(int index)
+    {
+        dialogueActivator[index].rep += 5;
+
+
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)
@@ -44,13 +55,15 @@ public class DialogueUI : MonoBehaviour
         responseHandler.AddResponseEvents(responseEvents);
     }
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, int index)
     {
-        if (pl.canGainRep)
+        if (pl.canGainRep && dialogueObject.RepFactor != 0)
         {
-            dialogueActivator.rep += dialogueObject.RepFactor + pl.repIncrease;
-            rm.ChangeRep(dialogueActivator.rep);
+            dialogueActivator[index].rep += dialogueObject.RepFactor + pl.repIncrease;
+            rm.ChangeRep(dialogueActivator[index].rep);
         }
+        if (dialogueObject.Target != null)
+            dialogueObject.Target.pop += dialogueObject.StudentPop;
 
         for (int i = 0; i < dialogueObject.DialogueLines.Count; i++)
         {
@@ -66,7 +79,7 @@ public class DialogueUI : MonoBehaviour
         }
         if (dialogueObject.HasResponses)
         {
-            responseHandler.ShowResponses(dialogueObject.Responses);
+            responseHandler.ShowResponses(dialogueObject.Responses, index);
         }
         else
         {

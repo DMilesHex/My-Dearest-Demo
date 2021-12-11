@@ -71,3 +71,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexToLoad: Classroom
+  tc: {fileID: 0}
+  startTime: 0
+  endTime: 0
+  keyText: {fileID: 6611900123297023844, guid: a295fe16f9db1df47be87c162e17a7da, type: 3}
+  helpText: {fileID: 228093217629156261, guid: f59877f4b37a5074f996174c900ca060, type: 3}
+  canvas: {fileID: 1867929946791626155, guid: c9de02110976c264cb4ed896f6ce5143, type: 3}
+  buttonPrompt: {fileID: 7860337397109333443, guid: 2e5183ec33063b64f85ce6e00421515d,
+    type: 3}

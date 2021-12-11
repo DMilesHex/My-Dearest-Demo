@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482afdea677fec04381c562d308bac77, type: 3}
   m_Name: Habiki gift
   m_EditorClassIdentifier: 
+  repFactor: 5
   _dialogueLine:
   - _npcName: 1
     _lineText: '... Oh. Th-thank you. '
+  responses: []

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6764827563373546851}
   - component: {fileID: 6764827563373546850}
   - component: {fileID: 7293855656627743944}
+  - component: {fileID: 2750723528056105733}
   m_Layer: 9
   m_Name: Habiki
   m_TagString: rival
@@ -50,6 +51,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -61,6 +64,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -73,7 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f1dc2533feb42cc44a00b73359a15339, type: 3}
+  m_Sprite: {fileID: -6436132509144468032, guid: a088796f01d8da74eb75d5ff3e5aa349,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +106,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.39, y: 4.39}
+    oldSize: {x: 5.03, y: 4.39}
     newSize: {x: 4.39, y: 4.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,6 +129,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: bbdd543933eb4af47b4096b33d038999, type: 2}
   rep: 0
+  pop: 0
+  key: {fileID: 6611900123297023844, guid: a295fe16f9db1df47be87c162e17a7da, type: 3}
+  help: {fileID: 228093217629156261, guid: f59877f4b37a5074f996174c900ca060, type: 3}
+  canvas: {fileID: 0}
+  buttonPrompt: {fileID: 7860337397109333443, guid: 2e5183ec33063b64f85ce6e00421515d,
+    type: 3}
+  studentIndex: 0
 --- !u!95 &6764827563373546851
 Animator:
   serializedVersion: 3
@@ -134,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 6764827563373546852}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 286d40f25ad88ba4081b165a0949d293, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea2c3139bdce34b4ba0f534c8355cc7e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -173,12 +185,12 @@ MonoBehaviour:
     onPickedResponse:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4619013818107908426, guid: 7d0825ccce6c547448e2e5ce5c321277,
-            type: 3}
-          m_MethodName: ShowDialogue
+        - m_Target: {fileID: 6764827563373546855}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 23a0e79cc4b9b8146be292851ee823f9,
+            m_ObjectArgument: {fileID: 11400000, guid: 39e409b9ced3fa647a65a860eb54a39c,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
             m_IntArgument: 0
@@ -186,17 +198,55 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   - name: Mean
     onPickedResponse:
       m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+        m_Calls:
+        - m_Target: {fileID: 6764827563373546855}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 39e409b9ced3fa647a65a860eb54a39c,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - name: Awkward
     onPickedResponse:
       m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+        m_Calls:
+        - m_Target: {fileID: 6764827563373546855}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 39e409b9ced3fa647a65a860eb54a39c,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2750723528056105733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764827563373546852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c33b8bd0c2d3b84b9cea1f70f57d857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  removeGift: 0
+  startDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  pl: {fileID: 5477995735012788432, guid: 4a4c06128a8f0bf49932317acd04d1a0, type: 3}
+  met: 0

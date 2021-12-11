@@ -6,6 +6,8 @@ using UnityEngine;
 public class DialogueObject : ScriptableObject
 {
     [SerializeField] private int repFactor;
+    [SerializeField] private int studentPop;
+    [SerializeField] private DialogueActivator target;
     [SerializeField] private List<DialogueLine> _dialogueLine;
     public List<DialogueLine> DialogueLines
     {
@@ -18,4 +20,6 @@ public class DialogueObject : ScriptableObject
     public Response[] Responses => responses;
     public bool HasResponses => Responses != null && Responses.Length > 0;
     public int RepFactor => repFactor;
+    public int StudentPop => studentPop;
+    public DialogueActivator Target => target;
 }

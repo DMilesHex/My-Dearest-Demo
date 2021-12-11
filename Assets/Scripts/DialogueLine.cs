@@ -6,7 +6,7 @@ public class DialogueLine
 {
     public enum NpcName
     {
-        Manami, Habiki, Ryo, Narration, Rin //...
+        Manami, Habiki, Ryo, Narration, Rin, Kyoko //...
     }
     public NpcName _npcName;
     [TextArea(3, 10)]

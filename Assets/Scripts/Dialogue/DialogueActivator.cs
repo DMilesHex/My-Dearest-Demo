@@ -1,12 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class DialogueActivator : MonoBehaviour, I_Interactable
 {
     [SerializeField] private DialogueObject dialogueObject;
     public int rep;
+    public int pop;
+
+    
+    public RectTransform canvas, buttonPrompt;
+    private GameObject promptPrefab;
+    public int studentIndex;
+    
+
+
 
     public void UpdateDialogueObject(DialogueObject dialogueObject)
     {
@@ -22,8 +32,8 @@ public class DialogueActivator : MonoBehaviour, I_Interactable
             Debug.Log(responseEvents.Length);
             pl.DialogueUI.AddResponseEvents(responseEvents);
         }
-        
-        pl.DialogueUI.ShowDialogue(dialogueObject);
+
+        pl.DialogueUI.ShowDialogue(dialogueObject, studentIndex);
         
     }
 
@@ -33,6 +43,11 @@ public class DialogueActivator : MonoBehaviour, I_Interactable
         {
             player pl = collision.GetComponent<player>();
             pl.interactable = this;
+            promptPrefab =  Instantiate(buttonPrompt.gameObject, canvas);
+            Text[] texts = promptPrefab.GetComponentsInChildren<Text>();
+            texts[0].text = "E";
+            texts[1].text = "Talk";
+            promptPrefab.transform.position = gameObject.transform.position;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -44,6 +59,8 @@ public class DialogueActivator : MonoBehaviour, I_Interactable
             {
                 pl.interactable = null;
             }
+
+            Destroy(promptPrefab);
         }
     }
 }

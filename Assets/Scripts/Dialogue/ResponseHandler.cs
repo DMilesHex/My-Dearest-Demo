@@ -24,7 +24,7 @@ public class ResponseHandler : MonoBehaviour
         this.responseEvents = responseEvents;
     }
 
-    public void ShowResponses(Response[] responses)
+    public void ShowResponses(Response[] responses, int studentIndex)
     {
         
         for(int i = 0; i < responses.Length; i++)
@@ -35,7 +35,7 @@ public class ResponseHandler : MonoBehaviour
             responseButton.gameObject.SetActive(true);
             responseButton.GetComponentInChildren<Text>().text = response.ResponseText;
             
-            responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
+            responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex, studentIndex));
 
             tempResponseButtons.Add(responseButton);
             
@@ -44,7 +44,7 @@ public class ResponseHandler : MonoBehaviour
         
     }
 
-    private void OnPickedResponse(Response response, int responseIndex)
+    private void OnPickedResponse(Response response, int responseIndex, int studentIndex)
     {
         responseContainer.gameObject.SetActive(false);
         
@@ -66,7 +66,7 @@ public class ResponseHandler : MonoBehaviour
 
         if (response.DialogueObject)
         {
-            dialogueUI.ShowDialogue(response.DialogueObject);
+            dialogueUI.ShowDialogue(response.DialogueObject, studentIndex);
             responseContainer.gameObject.SetActive(true);
         }
         else

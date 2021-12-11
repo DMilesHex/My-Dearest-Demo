@@ -19,22 +19,43 @@ public class NPC : MonoBehaviour
     void Update()
     {
         RaycastHit2D sightInfo = Physics2D.Raycast(sight.position, sight.right, sov);
-
+        
         if (sightInfo.collider == true)
         {
-            if (sightInfo.collider.gameObject.CompareTag("Player") == true)
+            if (gameObject.tag == "Teacher")
             {
-                //Player can be seen
-                Debug.Log("Player Captured");
-                if (weapon.activeSelf == true)
+                if (sightInfo.collider.gameObject.CompareTag("Player") == true)
                 {
-                    //Player is carrying a weopon
-                    Debug.Log("She had a weopon OMG!!!");
-                }
+                    //Player can be seen
+                    Debug.Log("Always watching Mike Wazowski");
+                    if (weapon.activeSelf == true)
+                    {
+                        //Player is carrying a weopon
+                        Debug.Log("Weapon game over");
+                    }
 
-                if (playerScript.sanity <= sanityLevel)
+                    if (playerScript.sanity <= sanityLevel)
+                    {
+                        Debug.Log("Sanity game over");
+                    }
+                }
+            }
+            else
+            {
+                if (sightInfo.collider.gameObject.CompareTag("Player") == true)
                 {
-                    Debug.Log("She's dropping blood");
+                    //Player can be seen
+                    Debug.Log("Player Captured");
+                    if (weapon.activeSelf == true)
+                    {
+                        //Player is carrying a weopon
+                        Debug.Log("She had a weopon OMG!!!");
+                    }
+
+                    if (playerScript.sanity <= sanityLevel)
+                    {
+                        Debug.Log("She's dropping blood");
+                    }
                 }
             }
         }

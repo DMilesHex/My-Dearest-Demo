@@ -15,6 +15,6 @@ MonoBehaviour:
   type: 0
   name: Humming Bird Charm
   weaponType: 2
-  equipped: 1
-  weaponprefab: {fileID: 3485164741745805636, guid: 52cbb41e8295b304a9378407678aed06,
+  equipped: 0
+  weaponprefab: {fileID: 8868170899129017607, guid: 752de50345a952542b2bc7c7d665bd6e,
     type: 3}
