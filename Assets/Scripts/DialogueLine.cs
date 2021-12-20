@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+
 [Serializable]
 public class DialogueLine
 {
@@ -16,4 +17,6 @@ public class DialogueLine
         get => _lineText;
         set => _lineText = value;
     }
+
+    public Sprite portrait;
 }

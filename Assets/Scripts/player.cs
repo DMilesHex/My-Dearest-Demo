@@ -94,7 +94,10 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+        if (Time.timeScale > 0)
+        {
+            movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+        }
         //image.gameObject.SetActive(false);
         moneyText.text = "$" + money;
 
@@ -109,7 +112,7 @@ public class player : MonoBehaviour
             button2.interactable = da.rep > 20;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && Time.timeScale > 0)
         {
                 interactable?.Interact(this);
             

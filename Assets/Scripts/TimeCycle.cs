@@ -24,7 +24,7 @@ public class TimeCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Time.timeScale > 0)
         timePassed += 1f;
 
         if (timePassed == 300)

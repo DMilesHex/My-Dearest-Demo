@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] private RepMeter rm;
     public player pl;
+    public Image portrait;
+    public GameObject portraitContainer;
     
 
     public bool isOpen { get; private set; }
@@ -70,6 +73,16 @@ public class DialogueUI : MonoBehaviour
             
             DialogueLine dialogue = dialogueObject.DialogueLines[i];
             nameText.text = dialogue._npcName.ToString();
+            if (dialogue.portrait != null)
+            {
+                portraitContainer.SetActive(true);
+                portrait.sprite = dialogue.portrait;
+            }
+            else
+            {
+                
+                portraitContainer.SetActive(false);
+            }
             yield return typewriterEffect.Run(dialogue, textLabel);
 
             if (i == dialogueObject.DialogueLines.Count - 1 && dialogueObject.HasResponses) break;
