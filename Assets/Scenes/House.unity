@@ -4021,7 +4021,8 @@ MonoBehaviour:
   - {fileID: 0}
   pl: {fileID: 0}
   student: {fileID: 0}
-  pickup: {fileID: 0}
+  pickup:
+  - {fileID: 0}
 --- !u!224 &8064903109082462124
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4220,7 +4221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8341892470615115787}
   m_Layer: 5
-  m_Name: GameObject (5)
+  m_Name: Text Box Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

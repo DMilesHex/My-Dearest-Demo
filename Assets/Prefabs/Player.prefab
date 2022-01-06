@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369350402384844589}
   m_Layer: 8
-  m_Name: GameObject (2)
+  m_Name: Fidget Cube Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5477995733575277664}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Knife Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5477995733793212817}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Humming Bird Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5477995734525214365}
   m_Layer: 8
-  m_Name: GameObject (1)
+  m_Name: Axe Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,6 +582,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Humming Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868170899129017657, guid: 752de50345a952542b2bc7c7d665bd6e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868170899129017657, guid: 752de50345a952542b2bc7c7d665bd6e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 752de50345a952542b2bc7c7d665bd6e, type: 3}

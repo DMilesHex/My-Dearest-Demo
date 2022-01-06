@@ -412,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: Home Door 1
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
@@ -496,7 +496,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door (2)
+      value: Home Door 2
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 1999923361}
   - component: {fileID: 1999923360}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2c56120b3a8504c93099918e97ec14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  song: []
 --- !u!82 &1999923361
 AudioSource:
   m_ObjectHideFlags: 0
@@ -720,7 +721,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Front Lobby Door
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}

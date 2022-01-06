@@ -715,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: Upstairs Hallway Door
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
@@ -822,7 +822,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door (2)
+      value: Front Lobby Door
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
@@ -1038,7 +1038,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door (3)
+      value: Outside Door
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
@@ -1475,12 +1475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c33b8bd0c2d3b84b9cea1f70f57d857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1171020462 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2203534701426215282, guid: 7d0825ccce6c547448e2e5ce5c321277,
-    type: 3}
-  m_PrefabInstance: {fileID: 4920094346505843288}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1191550322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4920094347697254186, guid: 7d0825ccce6c547448e2e5ce5c321277,
@@ -1739,7 +1733,7 @@ GameObject:
   - component: {fileID: 1337129866}
   - component: {fileID: 1337129865}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2161,18 +2155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53bcadb8d41c2d438d78183f9b501d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1595912759 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4560595277703434885, guid: 7d0825ccce6c547448e2e5ce5c321277,
-    type: 3}
-  m_PrefabInstance: {fileID: 4920094346505843288}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1675836539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8442565009135106016, guid: 3fdadaa79f6320b4990f2e418b1e62df,
@@ -2318,7 +2300,7 @@ GameObject:
   - component: {fileID: 1769759740}
   - component: {fileID: 1769759739}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Pause Menu Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2939,11 +2921,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 899645369179331460, guid: 7d0825ccce6c547448e2e5ce5c321277,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1313299431602403945, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
       propertyPath: dialogueActivator
@@ -3001,24 +2978,9 @@ PrefabInstance:
       objectReference: {fileID: 750977000}
     - target: {fileID: 4619013818107908426, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
-      propertyPath: portrait
-      value: 
-      objectReference: {fileID: 1595912759}
-    - target: {fileID: 4619013818107908426, guid: 7d0825ccce6c547448e2e5ce5c321277,
-        type: 3}
-      propertyPath: portraitContainer
-      value: 
-      objectReference: {fileID: 1171020462}
-    - target: {fileID: 4619013818107908426, guid: 7d0825ccce6c547448e2e5ce5c321277,
-        type: 3}
       propertyPath: dialogueActivator.Array.data[0]
       value: 
       objectReference: {fileID: 1593953442}
-    - target: {fileID: 4877776234434495095, guid: 7d0825ccce6c547448e2e5ce5c321277,
-        type: 3}
-      propertyPath: hours
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 4877776234434495095, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
       propertyPath: m_event.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3052,7 +3014,7 @@ PrefabInstance:
     - target: {fileID: 4920094346672780708, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: Main Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4920094346672781912, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
@@ -3159,16 +3121,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4920094347856230883, guid: 7d0825ccce6c547448e2e5ce5c321277,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4920094347856230883, guid: 7d0825ccce6c547448e2e5ce5c321277,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -139
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d0825ccce6c547448e2e5ce5c321277, type: 3}
 --- !u!1 &5114086320801780761 stripped
@@ -3184,16 +3136,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5477995734533236184, guid: 4a4c06128a8f0bf49932317acd04d1a0,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477995734533236184, guid: 4a4c06128a8f0bf49932317acd04d1a0,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5477995735012788432, guid: 4a4c06128a8f0bf49932317acd04d1a0,
         type: 3}
       propertyPath: ie
@@ -3209,11 +3151,6 @@ PrefabInstance:
       propertyPath: dialogueUI
       value: 
       objectReference: {fileID: 599940836}
-    - target: {fileID: 5477995735012788432, guid: 4a4c06128a8f0bf49932317acd04d1a0,
-        type: 3}
-      propertyPath: Sanity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3632759977280959392}
     - target: {fileID: 5477995735012788434, guid: 4a4c06128a8f0bf49932317acd04d1a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -3499,7 +3436,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Classroom Door
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}

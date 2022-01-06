@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 247982037}
   - component: {fileID: 247982039}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ PrefabInstance:
     - target: {fileID: 6191673584174117532, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Upstairs Hallway Door
       objectReference: {fileID: 0}
     - target: {fileID: 6191673584174117533, guid: 033d40fe8e839a54c83fa1c9b07b269a,
         type: 3}
