@@ -1002,7 +1002,7 @@ RectTransform:
   - {fileID: 2063404349}
   - {fileID: 716254813}
   m_Father: {fileID: 1011616578}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1111,6 +1111,8 @@ GameObject:
   - component: {fileID: 1501254178}
   - component: {fileID: 1501254177}
   - component: {fileID: 1501254179}
+  - component: {fileID: 1501254181}
+  - component: {fileID: 1501254180}
   m_Layer: 0
   m_Name: schoolyard
   m_TagString: Untagged
@@ -1177,8 +1179,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501254176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37, y: 2.4, z: 0}
-  m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
+  m_LocalPosition: {x: -1.92, y: 2.4, z: 0}
+  m_LocalScale: {x: 0.75086796, y: 0.58, z: 0.58}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1208,6 +1210,58 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 33, y: 5.9359055}
+  m_EdgeRadius: 0
+--- !u!61 &1501254180
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501254176}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 15.976648, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 33, y: 25.507326}
+    newSize: {x: 33, y: 25.499998}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0467024, y: 25.507326}
+  m_EdgeRadius: 0
+--- !u!61 &1501254181
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501254176}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -15.633308, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 33, y: 25.507326}
+    newSize: {x: 33, y: 25.499998}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7334833, y: 25.507326}
   m_EdgeRadius: 0
 --- !u!1 &1659299037
 GameObject:
