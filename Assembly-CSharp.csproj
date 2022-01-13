@@ -93,8 +93,10 @@
     <Compile Include="Assets\Scripts\InsanityEffects.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\House.cs" />
-    <Compile Include="Assets\Scripts\Save System\SaveData.cs" />
-    <Compile Include="Assets\Scripts\Save System\SaveSystem.cs" />
+    <Compile Include="Assets\Scripts\Save System\LoadAndSave.cs" />
+    <Compile Include="Assets\Scripts\Save System\Saveable.cs" />
+    <Compile Include="Assets\Scripts\Save System\ISaveable.cs" />
+    <Compile Include="Assets\Scripts\Save System\Objects to save\Money.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
