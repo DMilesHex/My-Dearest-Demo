@@ -56,13 +56,16 @@
     <Compile Include="Assets\Scripts\Dialogue\ResponseEvent.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
     <Compile Include="Assets\Scripts\AddPoints.cs" />
+    <Compile Include="Assets\Scripts\Save System\LoadAndSave.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Dialogue\ResponseHandler.cs" />
     <Compile Include="Assets\Scripts\Dialogue\TypewriterEffect.cs" />
     <Compile Include="Assets\Scripts\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\Club.cs" />
+    <Compile Include="Assets\Scripts\Save System\ISaveable.cs" />
     <Compile Include="Assets\Scripts\RepMeter.cs" />
+    <Compile Include="Assets\Scripts\Save System\Saveable.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueActivator.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\ButtonMove.cs" />
@@ -88,15 +91,13 @@
     <Compile Include="Assets\Scripts\NonDialogueInteractions.cs" />
     <Compile Include="Assets\Scripts\ItemAssets.cs" />
     <Compile Include="Assets\Scripts\InventoryScript.cs" />
+    <Compile Include="Assets\Scripts\Save System\Objects to save\Money.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\PanelTint.cs" />
     <Compile Include="Assets\Scripts\InsanityEffects.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\House.cs" />
-    <Compile Include="Assets\Scripts\Save System\LoadAndSave.cs" />
-    <Compile Include="Assets\Scripts\Save System\Saveable.cs" />
-    <Compile Include="Assets\Scripts\Save System\ISaveable.cs" />
-    <Compile Include="Assets\Scripts\Save System\Objects to save\Money.cs" />
+    <Compile Include="Assets\Scripts\Save System\AutoSave.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

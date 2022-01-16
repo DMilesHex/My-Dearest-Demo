@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-public class TimeCycle : MonoBehaviour
+public class TimeCycle : MonoBehaviour, ISaveable
 {
     private float timePassed;
     public int weeks, days, hours, minutes;
@@ -14,13 +14,10 @@ public class TimeCycle : MonoBehaviour
     public TMP_Text dayText;
     public TMP_Text weekText;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-      
+        weekText.text = "Week " + weeks;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -97,5 +94,28 @@ public class TimeCycle : MonoBehaviour
         }
     }
 
+    public object CaptureState()
+    {
+        return new SaveData
+        {
+            weeks = weeks,
+            days = days,
+            hours = hours,
+            minutes = minutes
+        };
+    }
 
+    public void RestoreState(object state)
+    {
+        var saveData = (SaveData)state;
+        weeks = saveData.weeks;
+        days = saveData.days;
+        hours = saveData.hours;
+        minutes = saveData.minutes;
+    }
+
+    private struct SaveData
+    {
+        public int weeks, days, hours, minutes;
+    }
 }

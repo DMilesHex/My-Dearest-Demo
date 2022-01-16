@@ -6,16 +6,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class LoadAndSave : MonoBehaviour
 {
-    private static string savePath => $"{Application.persistentDataPath}/MyDearest.game";
+    private  string savePath => $"{Application.persistentDataPath}/MyDearest.game";
 
-    private static void Save()
+    [ContextMenu("Save")]
+    public void Save()
     {
         var state = LoadFile();
         CaptureState(state);
         SaveFile(state);
     }
 
-    private static void Load()
+    [ContextMenu("Load")]
+    public void Load()
     {
         var state = LoadFile();
         RestoreState(state);
@@ -27,7 +29,7 @@ public class LoadAndSave : MonoBehaviour
     /// Load the file
     /// </summary>
     /// <returns></returns>
-    private static Dictionary<string, object> LoadFile()
+    private  Dictionary<string, object> LoadFile()
     {
         if (!File.Exists(savePath))
             return new Dictionary<string, object>();
@@ -43,7 +45,7 @@ public class LoadAndSave : MonoBehaviour
     /// Save the file
     /// </summary>
     /// <param name="state"></param>
-    private static void SaveFile(object state)
+    private void SaveFile(object state)
     {
         using (var stream = File.Open(savePath, FileMode.Create))
         {
@@ -52,7 +54,7 @@ public class LoadAndSave : MonoBehaviour
         }
     }
 
-    private static void CaptureState(Dictionary<string, object> state)
+    private void CaptureState(Dictionary<string, object> state)
     {
         foreach (var saveable in FindObjectsOfType<Saveable>())
         {
@@ -60,7 +62,7 @@ public class LoadAndSave : MonoBehaviour
         }
     }
 
-    private static void RestoreState(Dictionary<string, object> state)
+    private void RestoreState(Dictionary<string, object> state)
     {
         foreach (var saveable in FindObjectsOfType<Saveable>())
         {

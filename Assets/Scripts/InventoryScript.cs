@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryScript : MonoBehaviour
+public class InventoryScript : MonoBehaviour, ISaveable
 {
-
-
-
     public List<Weapon> inventoryList = new List<Weapon>();
     public List<GameObject> weaponSprites;
     public player pl;
@@ -14,11 +11,6 @@ public class InventoryScript : MonoBehaviour
     public List<Pickup> pickup;
     
     
-
-    public void Start() {
-        
-    }
-
     public void Remove(int index)
     {
             RemoveItem(inventoryList[index], index);
@@ -81,5 +73,27 @@ public class InventoryScript : MonoBehaviour
         weaponSprites[itemIndex].SetActive(false);
     }
 
+    public object CaptureState()
+    {
+        return new SaveData
+        {
+            inventoryList = inventoryList,
+            weaponSprites = weaponSprites
 
+        };
+    }
+
+    public void RestoreState(object state)
+    {
+        var saveData = (SaveData)state;
+        inventoryList = saveData.inventoryList;
+        weaponSprites = saveData.weaponSprites;
+    }
+
+
+    private struct SaveData
+    {
+        public List<Weapon> inventoryList;
+        public List<GameObject> weaponSprites;
+    }
 }
