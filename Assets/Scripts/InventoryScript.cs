@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryScript : MonoBehaviour, ISaveable
+public class InventoryScript : MonoBehaviour
 {
     public List<Weapon> inventoryList = new List<Weapon>();
     public List<GameObject> weaponSprites;
@@ -71,29 +71,5 @@ public class InventoryScript : MonoBehaviour, ISaveable
             inventoryList.Remove(itemToRemove);
         }
         weaponSprites[itemIndex].SetActive(false);
-    }
-
-    public object CaptureState()
-    {
-        return new SaveData
-        {
-            inventoryList = inventoryList,
-            weaponSprites = weaponSprites
-
-        };
-    }
-
-    public void RestoreState(object state)
-    {
-        var saveData = (SaveData)state;
-        inventoryList = saveData.inventoryList;
-        weaponSprites = saveData.weaponSprites;
-    }
-
-
-    private struct SaveData
-    {
-        public List<Weapon> inventoryList;
-        public List<GameObject> weaponSprites;
     }
 }

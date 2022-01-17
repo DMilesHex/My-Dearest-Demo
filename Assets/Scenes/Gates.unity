@@ -280,7 +280,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6713316317571701264, guid: 7d0825ccce6c547448e2e5ce5c321277, type: 3}
+    - {fileID: 6597301752119962358, guid: 7d0825ccce6c547448e2e5ce5c321277, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d0825ccce6c547448e2e5ce5c321277, type: 3}
 --- !u!114 &11603323 stripped
 MonoBehaviour:
@@ -312,7 +314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694c5f5183e76f64986c6f0f353857b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Time
 --- !u!1 &277595844
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +416,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 50
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 1062137851}
+--- !u!114 &1062137851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5630831128656507416, guid: 7d0825ccce6c547448e2e5ce5c321277,
+    type: 3}
+  m_PrefabInstance: {fileID: 11603322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062137847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1245515043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +513,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 033d40fe8e839a54c83fa1c9b07b269a, type: 3}
+--- !u!1 &1355524680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355524682}
+  m_Layer: 0
+  m_Name: test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1355524682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355524680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4, y: -1.6000001, z: -0.023104772}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1412033188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,7 +644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1999923360
 MonoBehaviour:
   m_ObjectHideFlags: 0

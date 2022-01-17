@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-public class TimeCycle : MonoBehaviour, ISaveable
+public class TimeCycle : MonoBehaviour
 {
     private float timePassed;
     public int weeks, days, hours, minutes;
@@ -92,30 +92,5 @@ public class TimeCycle : MonoBehaviour, ISaveable
             minutes = 0;
             timePassed = 0;
         }
-    }
-
-    public object CaptureState()
-    {
-        return new SaveData
-        {
-            weeks = weeks,
-            days = days,
-            hours = hours,
-            minutes = minutes
-        };
-    }
-
-    public void RestoreState(object state)
-    {
-        var saveData = (SaveData)state;
-        weeks = saveData.weeks;
-        days = saveData.days;
-        hours = saveData.hours;
-        minutes = saveData.minutes;
-    }
-
-    private struct SaveData
-    {
-        public int weeks, days, hours, minutes;
     }
 }

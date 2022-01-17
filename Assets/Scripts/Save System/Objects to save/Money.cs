@@ -4,39 +4,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Money : MonoBehaviour, ISaveable
+public class Money : MonoBehaviour
 {
-    public delegate void MoneySpent();
-    /// <summary> When the amount of money is updated  </summary>
-    public static event MoneySpent MoneyEvent;
-
     [SerializeField] private float money;
     [SerializeField] private Text moneyText;
 
+    private SaveData saveData;
+    private float tim;
+
     private void Awake()
     {
+        saveData = SaveSystem.Load();
+
+        money = saveData.Money;
         moneyText.text = $"${money}";
     }
-
-
-    public object CaptureState()
+    private void Update()
     {
-        return new SaveData
-        {
-            money = money
-        };
+        tim += Time.deltaTime;
+        if (tim < 10) {
+            return;
+        }
+        saveData.Money = money;
+        SaveSystem.Save(saveData);
+        Debug.Log("Saved bsij");
+        tim = 0;
+
     }
-
-    public void RestoreState(object state)
+    private void OnValidate()
     {
-        var saveData = (SaveData)state;
-        money = saveData.money;
-    }
-
-    [Serializable]
-    private struct SaveData
-    {
-        public float money;
+        moneyText.text = $"${money}";
     }
 }
 
