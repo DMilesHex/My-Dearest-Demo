@@ -10,8 +10,6 @@ public enum ItemType
 }
 public abstract class ItemList : ScriptableObject
 {
-
-    
     public ItemType type;
-    public string name;
+    public string nameString;
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioPlayerManager : MonoBehaviour
 {
     private static AudioPlayerManager instance = null;
-    private AudioSource audio;
+    private AudioSource audioSrc;
     private int audioID;
     public AudioClip[] song;
 
@@ -23,11 +23,11 @@ public class AudioPlayerManager : MonoBehaviour
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSrc = GetComponent<AudioSource>();
         audioID = Random.Range(0, 2);
         print(audioID);
-        audio.clip = song[audioID];
+        audioSrc.clip = song[audioID];
         
-        audio.Play();
+        audioSrc.Play();
     }
 }

@@ -5,19 +5,14 @@ using UnityEngine.UI;
 
 public class Transport : MonoBehaviour
 {
-    public string indexToLoad;
-
-    public TimeCycle tc;
-    public int startTime, endTime;
-
-
-    public RectTransform canvas, buttonPrompt;
+    [SerializeField] private string indexToLoad;
+    [SerializeField] private TimeCycle tc;
+    [SerializeField] private int startTime, endTime;
+    [SerializeField] private RectTransform canvas, buttonPrompt;
     private GameObject promptPrefab;
     
-
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
+    {        
         promptPrefab = Instantiate(buttonPrompt.gameObject, canvas);
 
         Text[] texts = promptPrefab.GetComponentsInChildren<Text>();
@@ -27,7 +22,6 @@ public class Transport : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (collision.name == "Player") 
         {
             if (Input.GetKeyDown(KeyCode.E)
@@ -41,7 +35,4 @@ public class Transport : MonoBehaviour
     {
         Destroy(promptPrefab);
     }
-
-
-
 }

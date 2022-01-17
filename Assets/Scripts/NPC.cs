@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour
                         Debug.Log("Weapon game over");
                     }
 
-                    if (playerScript.sanity <= sanityLevel)
+                    if (playerScript.Sanity <= sanityLevel)
                     {
                         Debug.Log("Sanity game over");
                     }
@@ -52,7 +52,7 @@ public class NPC : MonoBehaviour
                         Debug.Log("She had a weopon OMG!!!");
                     }
 
-                    if (playerScript.sanity <= sanityLevel)
+                    if (playerScript.Sanity <= sanityLevel)
                     {
                         Debug.Log("She's dropping blood");
                     }

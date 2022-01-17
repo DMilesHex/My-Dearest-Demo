@@ -14,7 +14,7 @@ public class Pickup : MonoBehaviour
     public Text dialogueText;
     public Text nameText;
 
-    public player pl;
+    [SerializeField] private Money money;
 
     public Animator animator;
 
@@ -39,7 +39,7 @@ public class Pickup : MonoBehaviour
     public void Buy()
     {
         buy.gameObject.SetActive(false);
-        if (pl.money >= 10.0f)
+        if (money.MoneyAmount >= 10.0f)
         {
             animator.SetBool("IsOpen", false);
             EnableButton();

@@ -7,8 +7,11 @@ public class AutoSave : MonoBehaviour
     [Header("How often should the autosave save the game")]
     [SerializeField] private float timeBeforeSave;
 
+    [Space(2)]
+
     [Header("Scripts that are saved:")]
     [SerializeField] private Money money;
+    [SerializeField] private TimeCycle timeCycle;
 
     private SaveData saveData;
     private float time;
@@ -17,22 +20,34 @@ public class AutoSave : MonoBehaviour
     {
         saveData = SaveSystem.Load();
     }
-    // Update is called once per frame
+
     void Update()
     {
         CalculateTime();
     }
 
+    /// <summary> Calculate the time and save the data when it's time to save them.</summary>
     private void CalculateTime()
     {
         if (time < timeBeforeSave)
+        {
             time += Time.deltaTime;
+        }
         else
         {
-         //   saveData.Money = money.MoneyAmount;
-            SaveSystem.Save(saveData);
-            Debug.Log("Saved");
+            Save();
+            print("saved");
+            time = 0;
         }
-            
+    }
+
+    /// <summary> Save the data </summary>
+    private void Save()
+    {
+        saveData.Money = money.MoneyAmount;
+        saveData.Day = timeCycle.Day;
+        saveData.Week = timeCycle.Week;
+
+        SaveSystem.Save(saveData);
     }
 }

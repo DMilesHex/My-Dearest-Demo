@@ -30,7 +30,7 @@ public class TreeScript : MonoBehaviour
         if (collisions[0] != null && pl.chopped)
         {
             Debug.Log("stuff");
-            pl.sanity -= 40;
+            pl.Sanity -= 40;
             Destroy(collisions[0].gameObject);
         }
 

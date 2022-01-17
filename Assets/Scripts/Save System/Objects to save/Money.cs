@@ -6,11 +6,28 @@ using UnityEngine.UI;
 
 public class Money : MonoBehaviour
 {
+    [Header("The amount of money")]
     [SerializeField] private float money;
+    [Header("Text")]
     [SerializeField] private Text moneyText;
 
     private SaveData saveData;
-    private float tim;
+
+    private void OnEnable()
+    {
+        player.ValueChanged += TextChanged;
+    }
+
+    private void OnDisable()
+    {
+        player.ValueChanged -= TextChanged;
+    }
+
+    public float MoneyAmount
+    {
+        get { return money; }
+        set { money = MoneyAmount; }
+    }
 
     private void Awake()
     {
@@ -19,18 +36,13 @@ public class Money : MonoBehaviour
         money = saveData.Money;
         moneyText.text = $"${money}";
     }
-    private void Update()
-    {
-        tim += Time.deltaTime;
-        if (tim < 10) {
-            return;
-        }
-        saveData.Money = money;
-        SaveSystem.Save(saveData);
-        Debug.Log("Saved bsij");
-        tim = 0;
 
+    private void TextChanged(float moneyAmount)
+    {
+        money = moneyAmount;
+        moneyText.text = $"${money}";
     }
+
     private void OnValidate()
     {
         moneyText.text = $"${money}";

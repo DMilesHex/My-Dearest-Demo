@@ -9,14 +9,33 @@ public class TimeCycle : MonoBehaviour
 {
     private float timePassed;
     public int weeks, days, hours, minutes;
-    public List<UnityEvent> m_event;
+    [Space(2)]
+    [SerializeField] private List<UnityEvent> m_event;
+    [Space(2)]
+    [SerializeField] private TMP_Text dayText;
+    [SerializeField] private TMP_Text weekText;
 
-    public TMP_Text dayText;
-    public TMP_Text weekText;
+    private SaveData saveData;
+
+    #region Public Variables
+    public int Week
+    {
+        get { return weeks; }
+        set { weeks = Week; }
+    }
+
+    public int Day
+    {
+        get { return days; }
+        set { days = Day; }
+    }
+    #endregion
 
     private void Awake()
     {
-        weekText.text = "Week " + weeks;
+        saveData = SaveSystem.Load();
+        days = saveData.Day;
+        weekText.text = "Week " + saveData.Week;
     }
     // Update is called once per frame
     void Update()
@@ -24,6 +43,27 @@ public class TimeCycle : MonoBehaviour
         if(Time.timeScale > 0)
         timePassed += 1f;
 
+        SetDate();
+    }
+
+    public void ClassTime()
+    {
+        if (hours <= 8)
+        {
+            hours = 13;
+            minutes = 0;
+            timePassed = 0;
+        }
+        else if (hours > 13 && hours < 16)
+        {
+            hours = 16;
+            minutes = 0;
+            timePassed = 0;
+        }
+    }
+
+    private void SetDate()
+    {
         if (timePassed == 300)
         {
             timePassed = 0;
@@ -39,7 +79,7 @@ public class TimeCycle : MonoBehaviour
             hours = 0;
             days += 1;
         }
-        if (days == 8)
+        if (days == 7)
         {
             days = 0;
             weeks += 1;
@@ -76,21 +116,5 @@ public class TimeCycle : MonoBehaviour
         }
 
         weekText.text = "Week " + weeks;
-    }
-
-    public void ClassTime()
-    {
-        if (hours <= 8)
-        {
-            hours = 13;
-            minutes = 0;
-            timePassed = 0;
-        }
-        else if (hours > 13 && hours < 16)
-        {
-            hours = 16;
-            minutes = 0;
-            timePassed = 0;
-        }
     }
 }

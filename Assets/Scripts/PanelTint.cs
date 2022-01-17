@@ -15,8 +15,7 @@ public class PanelTint : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-       
+    {       
         if (time.hours >= 16)
         {
             
@@ -25,12 +24,8 @@ public class PanelTint : MonoBehaviour
             endColour.a = 60;
             
            
-                tempColour = Color32.Lerp(panelColour.color,
-                    endColour, Time.deltaTime);
+            tempColour = Color32.Lerp(panelColour.color, endColour, Time.deltaTime);
 
-                      
-                
-           
             panelColour.color = tempColour;
         }
     }

@@ -7,61 +7,71 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
-    
+    public delegate void OnMoneyChanged(float amount);
+    public static event OnMoneyChanged ValueChanged;
 
-    public float speed = 5f;
-    public Rigidbody2D rb;
-    public Vector2 movement;
-    public int sanity;
-    public int sanityMax = 100;
+    #region Variables
+    [Header("Movement")]
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private Vector2 movement;
+
+    [Space(2)]
+    [Header("Sanity")]
+    public int Sanity;
+    public int SanityMax = 100;
+
+    [Space(2)]
+    [Header("Inventory")]
     [SerializeField]
     public Weapon[] weapons;
     public GameObject weaponheld;
     public InventoryScript inventory;
-    public Animator an;
+
+    [Space(2)]
+    [Header("Study points")]
+    public int studyPoints;
+
+    [Space(2)]
+    [Header("Dialogue")]
+    [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private DialogueActivator dialogueActivator;
+    public DialogueUI DialogueUI => dialogueUI;
+
+    [Space(2)]
+    [Header("UI")]
+    [SerializeField] private Button button;
+    [SerializeField] private Button button2;
+    [SerializeField] private GameObject responseContainer, secondResponseContainer;
+    [SerializeField] private Image panelColour;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private RectTransform buttonCanvas, buttonPrompt;
+
+    [Space(2)]
+    [Header("I can't name this section")]
     public bool chopped;
     Weapon axe;
     public TimeCycle tc;
     public UnityEvent tutor;
     public GameObject tutorButtons;
     public bool litter;
-    
-   
-
-    public Text moneyText;
-
-    public float money;
     public UnityEvent loadBar;
     public InsanityEffects ie;
-    public int studyPoints;
-
-    [SerializeField] private DialogueUI dialogueUI;
-    public DialogueUI DialogueUI => dialogueUI;
     public int repIncrease;
-    public Button button, button2;
-    public DialogueActivator da;
-
-    public GameObject responseContainer, secondResponseContainer;
-
     public bool canGainRep = true;
-
     public I_Interactable interactable { get; set; }
-
     public AddPoints add;
     public int psych, bio;
 
-    public Image panelColour;
-    public GameObject canvas;
-
-    public RectTransform buttonCanvas, buttonPrompt;
+    //Private variables
+    private Rigidbody2D rb;
+    private Animator anim;
     private GameObject promptPrefab;
-
-    // Start is called before the first frame update
-
+    #endregion
     public void Awake()
     {
-        sanity = sanityMax;
-
+        rb = this.GetComponent<Rigidbody2D>();
+        anim = this.GetComponent<Animator>();
+        Sanity = SanityMax;
     }
 
     public void Equip(int equipnumber)
@@ -75,8 +85,6 @@ public class player : MonoBehaviour
  
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
-
         if (SceneManager.GetActiveScene().name == "Outside")
         {
             weapons = Resources.FindObjectsOfTypeAll<Weapon>();
@@ -94,79 +102,63 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale > 0)
-        {
+        if (Time.timeScale < 0)
+            return;
+        else
             movement = new Vector2(Input.GetAxis("Horizontal"), 0);
-        }
-        //image.gameObject.SetActive(false);
-        moneyText.text = "$" + money;
 
         if (!SceneManager.GetActiveScene().name.Equals("House"))
-        {
-            ie.ChangeSanity(sanity);
-
-        }
+            ie.ChangeSanity(Sanity);
         else
         {
             button.interactable = studyPoints > 0;
-            button2.interactable = da.rep > 20;
+            button2.interactable = dialogueActivator.rep > 20;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && Time.timeScale > 0)
-        {
-                interactable?.Interact(this);
-            
-        }
+            interactable?.Interact(this);
 
         if (SceneManager.GetActiveScene().name == "Outside")
         {
-
             if (Input.GetKeyDown(KeyCode.E) && tc.hours > 16)
             {
                 tutorButtons.SetActive(true);
                 tc.hours += 1;
             }
+
             if (Input.GetKeyDown(KeyCode.Space))
-            {
                 litter = true;
-            }
         }
-
-
     }
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
-        moveCharacter(movement);  
-    }
-    void moveCharacter(Vector2 direction) {
-        rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
-    }
+        MoveCharacter(movement);  
+    }  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         foreach (Weapon weapon in weapons)
         {
             if (weapon.weaponType == Weapon.WeaponType.Axe)
-            {
                 axe = weapon;
-            }
         }
 
     }
 
     private void OnTriggerStay2D(Collider2D collision)
-    {
-        
+    {       
         if (collision.CompareTag("Tree") && axe.equipped && Input.GetKeyDown(KeyCode.F))
-
         {
             chopped = true;
-            an.SetBool("isChopped", true);
-
-
+            anim.SetBool("isChopped", true);
         }
 
+    }
+
+    private void MoveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
     }
 
     public void AddStudyPoints(int amount)
@@ -181,7 +173,7 @@ public class player : MonoBehaviour
 
     public void SanityRestore()
     {
-        sanity = sanityMax;
+        Sanity = SanityMax;
     }
 
     public void MakeMoney()
@@ -192,13 +184,13 @@ public class player : MonoBehaviour
 
     public void Tutor()
     {
-        money += 100;
+        ValueChanged(100);
         EndDay();
     }
 
     public void Job()
     {
-        money += 30;
+        ValueChanged(30);
         EndDay();
     }
 
@@ -207,16 +199,19 @@ public class player : MonoBehaviour
         float troubleChance = Random.value;
         if (troubleChance > 0.3)
         {
-            money += 50;
+            ValueChanged(50);
+            return;
         }
         else if (troubleChance < 0.05)
         {
             Debug.Log("You were arrested. Game over");
+            return;
         }
         else
         {
             canGainRep = false;
         }
+
         EndDay();
     }
 
@@ -228,22 +223,20 @@ public class player : MonoBehaviour
 
     public void StatDist(int index)
     {
+        if (studyPoints < 0)
+            return;
 
-        if (studyPoints > 0)
+        studyPoints--;
+        switch (index)
         {
-            studyPoints--;
-            switch (index)
-            {
-                case 0:
-                    psych++;
-                    break;
-                case 1:
-                    bio++;
-                    break;
-            }
-            add.Add(index);
+            case 0:
+                psych++;
+                break;
+            case 1:
+                bio++;
+                break;
         }
-        
+        add.Add(index);
     }
 
     void EndDay()
@@ -252,20 +245,11 @@ public class player : MonoBehaviour
         Color32 tempColour = panelColour.color;
         Color32 endColour = panelColour.color;
         endColour.a = 255;
-
-
-        tempColour = Color32.Lerp(panelColour.color,
-            endColour, Time.time);
-        
-
-
-
-
+        tempColour = Color32.Lerp(panelColour.color, endColour, Time.time);
         panelColour.color = tempColour;
         Color32 fadein = panelColour.color;
         fadein.a = 0;
-        tempColour = Color32.Lerp(panelColour.color,
-            fadein, Time.time);
+        tempColour = Color32.Lerp(panelColour.color, fadein, Time.time);
         panelColour.color = tempColour;
         loadBar.Invoke();
     }

@@ -43,7 +43,7 @@ public class NonDialogueInteractions : MonoBehaviour
         {
             an.SetBool("Bloody", true);
             Debug.Log("dead");
-            pl.sanity -= 10;
+            pl.Sanity -= 10;
             removeWeapon.Invoke();
             Destroy(gameObject);
 

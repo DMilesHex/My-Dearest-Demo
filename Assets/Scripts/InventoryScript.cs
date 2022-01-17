@@ -33,10 +33,10 @@ public class InventoryScript : MonoBehaviour
         }
         else if (equippedWeapon.name == "Fidget Cube")
         {
-            if (pl.sanity <= pl.sanityMax - 10)
-                pl.sanity += 10;
+            if (pl.Sanity <= pl.SanityMax - 10)
+                pl.Sanity += 10;
             equippedWeapon.equipped = false;
-            Debug.Log(pl.sanity);
+            Debug.Log(pl.Sanity);
         }
         else if (equippedWeapon.name == "Hunting Knife")
         {
