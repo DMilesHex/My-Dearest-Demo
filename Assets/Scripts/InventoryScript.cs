@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
-    public List<Weapon> inventoryList = new List<Weapon>();
-    public List<GameObject> weaponSprites;
-    public player pl;
-    public NonDialogueInteractions student;
-    public List<Pickup> pickup;
-    
-    
+    [SerializeField] private player player;
+    [SerializeField] private List<Weapon> inventoryList = new List<Weapon>();
+    [SerializeField] private List<GameObject> weaponSprites;
+    [SerializeField] private NonDialogueInteractions student;
+    [SerializeField] private List<Pickup> pickup;
+
+    public List<Weapon> InventoryList { get => inventoryList; set => inventoryList = value; }
+
     public void Remove(int index)
     {
-            RemoveItem(inventoryList[index], index);
-            pickup[index].DisableButton();
+       RemoveItem(InventoryList[index], index);
+       pickup[index].DisableButton();
     }
 
     public void OnClickButton(Weapon equippedWeapon)
     {
         Debug.Log("Just do something please");
-        foreach (Weapon weapon in inventoryList)
+        foreach (Weapon weapon in InventoryList)
         {
             weapon.equipped = false;
         }
@@ -33,10 +34,10 @@ public class InventoryScript : MonoBehaviour
         }
         else if (equippedWeapon.name == "Fidget Cube")
         {
-            if (pl.Sanity <= pl.SanityMax - 10)
-                pl.Sanity += 10;
+            if (player.Sanity <= player.SanityMax - 10)
+                player.Sanity += 10;
             equippedWeapon.equipped = false;
-            Debug.Log(pl.Sanity);
+            Debug.Log(player.Sanity);
         }
         else if (equippedWeapon.name == "Hunting Knife")
         {
@@ -52,14 +53,9 @@ public class InventoryScript : MonoBehaviour
 
     }
 
-    
-
-    
-
     public void AddWeapon(Weapon weapontoadd)
     {
-        inventoryList.Add(weapontoadd);
-
+        InventoryList.Add(weapontoadd);
     }
 
     public void RemoveItem(Weapon itemToRemove, int itemIndex)
@@ -68,7 +64,7 @@ public class InventoryScript : MonoBehaviour
         if (GameObject.Find(itemToRemove.weaponprefab.name))
         {
             Debug.Log("deleted");
-            inventoryList.Remove(itemToRemove);
+            InventoryList.Remove(itemToRemove);
         }
         weaponSprites[itemIndex].SetActive(false);
     }

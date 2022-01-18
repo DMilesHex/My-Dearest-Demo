@@ -6,16 +6,12 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
+    [SerializeField] private GameObject weapon;
+    [SerializeField] private float sov = 5f;
+    [SerializeField] private Transform sight;
+    [SerializeField] private player playerScript;
+    [SerializeField] private int sanityLevel = 60;
 
-    public GameObject weapon;
-    public float sov = 5f;
-    public Transform sight;
-
-    public player playerScript;
-
-    public int sanityLevel = 60;
-
-    // Update is called once per frame
     void Update()
     {
         RaycastHit2D sightInfo = Physics2D.Raycast(sight.position, sight.right, sov);

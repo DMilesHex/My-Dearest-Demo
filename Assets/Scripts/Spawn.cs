@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemTypes
+{
+    Weapon,
+    Item
+}
+
 public class Spawn : MonoBehaviour
 {
-    public GameObject item;
+    [SerializeField] private GameObject item;
+    [SerializeField] private ItemTypes type;
     private Transform player;
-    public enum ItemType
-    {
-        Weapon,
-        Item
-    }
-    public ItemType type;
-    // Start is called before the first frame update
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;

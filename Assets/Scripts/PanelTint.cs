@@ -5,27 +5,17 @@ using UnityEngine.UI;
 
 public class PanelTint : MonoBehaviour
 {
-    public Image panelColour;
-    public TimeCycle time;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Image panelColour;
+    [SerializeField] private TimeCycle time;
 
-    // Update is called once per frame
     void Update()
     {       
         if (time.hours >= 16)
-        {
-            
+        {          
             Color32 tempColour = panelColour.color;
             Color32 endColour = panelColour.color;
-            endColour.a = 60;
-            
-           
+            endColour.a = 60;               
             tempColour = Color32.Lerp(panelColour.color, endColour, Time.deltaTime);
-
             panelColour.color = tempColour;
         }
     }

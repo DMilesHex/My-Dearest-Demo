@@ -72,16 +72,12 @@ public class Pickup : MonoBehaviour
 
     void Shop(int progression)
     {
-
             animator.SetBool("IsOpen", true);
         for (int h = 0; h < shopDialogue[0].DialogueLines.Count; h++)
         {
-
             Debug.Log(shopDialogue[progression].DialogueLines[h]);
             dialogueText.text = shopDialogue[progression].DialogueLines[h].LineText;
-            nameText.text = shopDialogue[progression].DialogueLines[h]._npcName.ToString();
-
-            
+            nameText.text = shopDialogue[progression].DialogueLines[h].NpcName.ToString();         
         }
 
     }

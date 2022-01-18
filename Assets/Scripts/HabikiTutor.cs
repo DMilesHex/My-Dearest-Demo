@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HabikiTutor : MonoBehaviour
 {
-    public DialogueUI ui;
-    public bool tutorQuestDone;
-    public DialogueActivator da;
-    public GameObject tutorButtons;
+    [SerializeField] private DialogueUI ui;
+    [SerializeField] private bool tutorQuestDone;
+    [SerializeField] private DialogueActivator dialogueActivator;
+    [SerializeField] private GameObject tutorButtons;
 
     public void RightAnswers()
     {
@@ -18,7 +18,7 @@ public class HabikiTutor : MonoBehaviour
     public void WrongAnswers()
     {
         tutorQuestDone = true;
-        da.pop -= 5;
+        dialogueActivator.pop -= 5;
         tutorButtons.SetActive(false);
     }
 }

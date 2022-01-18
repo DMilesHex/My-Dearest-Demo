@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject target;
-    public Vector2 offset;
-
-    private Rigidbody2D cameraRigidbody;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    [SerializeField] private GameObject target;
+    [SerializeField] private Vector2 offset;
 
     void FixedUpdate()
     {

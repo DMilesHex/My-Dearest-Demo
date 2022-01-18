@@ -6,18 +6,17 @@ using UnityEngine.Events;
 
 public class OpenStatScreen : MonoBehaviour
 {
-    public GameObject statDist;
-    public TMP_Text studyPointsLeft;
-    public player pl;
-    public UnityEvent classTime;
+    [SerializeField] private GameObject statDist;
+    [SerializeField] private TMP_Text studyPointsLeft;
+    [SerializeField] private player player;
+    [SerializeField] private UnityEvent classTime;
 
     private void Update()
     {
-        studyPointsLeft.text = "Study Points " + pl.studyPoints;
+        studyPointsLeft.text = "Study Points " + player.studyPoints;
     }
     private void OnTriggerStay2D(Collider2D collision)
-    {
-        
+    {     
         if (collision.gameObject.name == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))

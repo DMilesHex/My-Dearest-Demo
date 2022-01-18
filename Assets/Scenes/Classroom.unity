@@ -1287,6 +1287,11 @@ PrefabInstance:
       propertyPath: money
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515612340240318968, guid: 7d0825ccce6c547448e2e5ce5c321277,
+        type: 3}
+      propertyPath: pl
+      value: 
+      objectReference: {fileID: 1974237535}
     - target: {fileID: 8663076729349772264, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
       propertyPath: m_havePropertiesChanged

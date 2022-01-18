@@ -6,13 +6,12 @@ using UnityEngine.Events;
 
 public class ClubActivity : MonoBehaviour
 {
-    public RectTransform canvas, buttonPrompt;
-    private GameObject promptPrefab;
-    public Weapon activity;
-    public UnityEvent remove;
-
+    [SerializeField] private RectTransform canvas, buttonPrompt;
+    [SerializeField] private Weapon activity;
+    [SerializeField] private UnityEvent remove;
     public List<Club> clublist;
-    public Club addclub;
+    [SerializeField] private Club addclub;
+    [SerializeField] private GameObject promptPrefab;
 
     public void ClubStart(string name)
     {
@@ -22,29 +21,15 @@ public class ClubActivity : MonoBehaviour
         addclub.bclubjoined = true;
         clublist.Add(addclub);
     } 
+
     public bool JoinClub(string name)
     {
-        
-
         foreach (Club club in clublist)
         {
             if (name == addclub.clubname)
-            {
                 return true;
-            }
-            
         }
         return false;
-    }
-
-
-
-
-
-
-    private void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,15 +47,10 @@ public class ClubActivity : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (collision.name == "Player")
         {
-
             if (Input.GetKeyDown(KeyCode.F) && activity.equipped && JoinClub(gameObject.name))
-            {
                 remove.Invoke();
-            }
-
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

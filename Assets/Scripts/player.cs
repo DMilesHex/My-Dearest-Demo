@@ -77,7 +77,7 @@ public class player : MonoBehaviour
     public void Equip(int equipnumber)
     {
         inventory = GameObject.FindWithTag("Inventory").GetComponent<InventoryScript>();
-        Weapon weapontoequip = inventory.inventoryList[equipnumber];
+        Weapon weapontoequip = inventory.InventoryList[equipnumber];
 
         weaponheld = weapontoequip.weaponprefab;
     }

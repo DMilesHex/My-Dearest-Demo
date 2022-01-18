@@ -11,13 +11,10 @@ public class ItemAssets : MonoBehaviour
         Instance = this;
     }
 
-
     public Transform pfItemWorld;
     public Sprite knifeSprite;
     public Sprite axeSprite;
     public Sprite hummingBirdSprite;
     public Sprite oishiOishiSprite;
     public Sprite fidgetCubeSprite;
-
-
 }

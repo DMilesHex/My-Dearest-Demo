@@ -6,14 +6,11 @@ using UnityEngine.UI;
 
 public class Bathroom : MonoBehaviour
 {
-    public RectTransform canvas, buttonPrompt;
+    [SerializeField] private RectTransform canvas, buttonPrompt;
     private GameObject promptPrefab;
     
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         promptPrefab = Instantiate(buttonPrompt.gameObject, canvas);
 
         Text[] texts = promptPrefab.GetComponentsInChildren<Text>();
@@ -24,13 +21,9 @@ public class Bathroom : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Blood cleaned");
-            }
-        }
+        if (collision.name == "Player" && Input.GetKeyDown(KeyCode.E))
+            Debug.Log("Blood cleaned");
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

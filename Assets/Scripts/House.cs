@@ -6,26 +6,13 @@ using TMPro;
 
 public class House : MonoBehaviour
 {
-    public List<DialogueObject> dialogue;
-    public TMP_Text infoText;
+    [SerializeField] private List<DialogueObject> dialogue;
+    [SerializeField] private TMP_Text infoText;
     
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ShowText(int index)
     {
         for(int i = 0; i < dialogue[index].DialogueLines.Count; i++)
-        infoText.text = dialogue[index].DialogueLines[i].LineText; 
+            infoText.text = dialogue[index].DialogueLines[i].LineText; 
     }
     public void HideText()
     {

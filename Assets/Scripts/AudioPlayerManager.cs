@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AudioPlayerManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] songs;
     private static AudioPlayerManager instance = null;
     private AudioSource audioSrc;
     private int audioID;
-    public AudioClip[] song;
+   
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class AudioPlayerManager : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         audioID = Random.Range(0, 2);
         print(audioID);
-        audioSrc.clip = song[audioID];
+        audioSrc.clip = songs[audioID];
         
         audioSrc.Play();
     }

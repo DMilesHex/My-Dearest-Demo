@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AddPoints : MonoBehaviour
 {
-    public List<GameObject> pointContainers;
-    public GameObject point;
+    [SerializeField] private List<GameObject> pointContainers;
+    [SerializeField] private GameObject point;
 
     public void Add(int index)
     {

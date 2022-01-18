@@ -3,21 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TreeScript : MonoBehaviour
-{
-    
-    public Animator animator;
-    public player pl;
-
-    List<GameObject> collisions;
+{    
+    [SerializeField] private player player;
+    private List<GameObject> collisions;
 
     private void Awake()
     {
         collisions = new List<GameObject>();
-    }
-    private void Update()
-    {
-        
-        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,16 +19,11 @@ public class TreeScript : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collisions[0] != null && pl.chopped)
+        if (collisions[0] != null && player.chopped)
         {
             Debug.Log("stuff");
-            pl.Sanity -= 40;
+            player.Sanity -= 40;
             Destroy(collisions[0].gameObject);
         }
-
-
-
-
-
     }
 }

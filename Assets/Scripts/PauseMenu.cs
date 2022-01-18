@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public string sceneToLoad;
-    public GameObject menu;
+    [SerializeField] private string sceneToLoad;
+    [SerializeField] private GameObject menu;
 
     private void Awake()
     {
@@ -17,8 +17,7 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            
+        {           
             if (menu.activeSelf)
             {
                 menu.SetActive(false);
@@ -42,6 +41,4 @@ public class PauseMenu : MonoBehaviour
         PlayerTransporter.LoadMap(sceneToLoad);
         Destroy(gameObject);
     }
-
-
 }

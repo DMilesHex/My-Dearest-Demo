@@ -3,30 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-public class InsanityEffects : MonoBehaviour
+
+public enum SanityDisplay
 {
-    public player pl;
-    
-   
-    public enum SanityDisplay
-    {
-        Zero, Ten, Twenty, Thirty, Forty, Fifty, Sixty, Seventy, Eighty, Ninety, Full
-    }
-    SanityDisplay sanityDisplay;
-    public List<Image> sanityImage;
-    // Start is called before the first frame update
+    Zero, Ten, Twenty, Thirty, Forty, Fifty, Sixty, Seventy, Eighty, Ninety, Full
+}
+
+public class InsanityEffects : MonoBehaviour
+{       
+    private SanityDisplay sanityDisplay;
+    [SerializeField] private List<Image> sanityImage;
+
     void Start()
-    {
-        
+    {       
         sanityDisplay = new SanityDisplay();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        
     }
 
     public void ChangeSanity(int sanity)

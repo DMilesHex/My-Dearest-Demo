@@ -6,13 +6,8 @@ using System;
 
 public class ClockAnimator : MonoBehaviour
 {
-    public Transform hourHand, minuteHand;
-    public TimeCycle time;
-
-    private void Awake()
-    {
-          
-    }
+    [SerializeField] private Transform hourHand, minuteHand;
+    [SerializeField] private TimeCycle time;
 
     private void Update()
     {

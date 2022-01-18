@@ -7,9 +7,6 @@ public static class PlayerTransporter
 {
     public static void LoadMap(string sceneIndex)
     {
-        Debug.Log(sceneIndex);
-        
-        
          SceneManager.LoadScene(sceneIndex);
     }
 }
