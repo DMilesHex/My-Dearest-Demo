@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6A3500BD-0F24-D9E0-334F-51CD5C754425}</ProjectGuid>
+    <ProjectGuid>{C3855645-2656-9A50-3B61-A0FBE1AC9274}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Dialogue\ResponseEvent.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
     <Compile Include="Assets\Scripts\AddPoints.cs" />
+    <Compile Include="Assets\Scripts\Rin shop\RandomItem.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Dialogue\ResponseHandler.cs" />
@@ -98,7 +99,6 @@
     <Compile Include="Assets\Scripts\InsanityEffects.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\House.cs" />
-    <Compile Include="Assets\Scripts\Rin shop\RandomItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

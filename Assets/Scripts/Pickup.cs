@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Pickup : MonoBehaviour
 {
@@ -11,18 +12,18 @@ public class Pickup : MonoBehaviour
     public Weapon associatedWeapon;
 
     public List<DialogueObject> shopDialogue;
-    public Text dialogueText;
-    public Text nameText;
+    public TMP_Text dialogueText;
+    public TMP_Text nameText;
 
     [SerializeField] private Money money;
 
-    public Animator animator;
+    public GameObject textBox;
 
     public Button buy;
 
     private void Start()
     {      
-        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
+       
     }
 
     public void DisableButton()
@@ -40,15 +41,18 @@ public class Pickup : MonoBehaviour
 
         if (money.MoneyAmount >= associatedWeapon.price)
         {
-            animator.SetBool("IsOpen", false);
+            
+            textBox.SetActive(false);
             money.MoneyAmount -= associatedWeapon.price;
             EnableButton();
+            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
             inventory.AddWeapon(associatedWeapon);
         }
         else
         {
             Shop(1);
-            animator.SetBool("IsOpen", false);
+            textBox.SetActive(false);
+            
         }
     }
     public void AddUI()
@@ -61,13 +65,14 @@ public class Pickup : MonoBehaviour
         else
         {
             EnableButton();
+            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
             inventory.AddWeapon(associatedWeapon);
         }     
     }
 
     void Shop(int progression)
     {
-         animator.SetBool("IsOpen", true);
+        textBox.SetActive(true);
 
         for (int h = 0; h < shopDialogue[0].DialogueLines.Count; h++)
         {
