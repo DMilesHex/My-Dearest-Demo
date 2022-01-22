@@ -7,6 +7,9 @@ using TMPro;
 
 public class TimeCycle : MonoBehaviour
 {
+    public delegate void OnNewWeek();
+    public static event OnNewWeek NewWeek; //If it's the new week, call this event.
+
     private float timePassed;
     public int weeks, days, hours, minutes;
     [Space(2)]
@@ -33,9 +36,11 @@ public class TimeCycle : MonoBehaviour
 
     private void Awake()
     {
-        saveData = SaveSystem.Load();
+        saveData = SaveSystem.Load(); //Load the data and assing dayss and weeks from it.
         days = saveData.Day;
+        weeks = saveData.Week;
         weekText.text = "Week " + saveData.Week;
+        NewWeek();
     }
     // Update is called once per frame
     void Update()
@@ -83,6 +88,7 @@ public class TimeCycle : MonoBehaviour
         {
             days = 0;
             weeks += 1;
+            NewWeek();
         }
 
         if (hours >= 8 && hours < 13 || hours >= 14 && hours < 16)

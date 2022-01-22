@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d3c15f00c69bd4a87ad0596efe54aa, type: 3}
-  m_Name: Axe
+  m_Name: Fidget Cube
   m_EditorClassIdentifier: 
-  type: 2
-  name: Wood Hatchet
-  weaponType: 1
-  equipped: 1
-  weaponprefab: {fileID: 3485164741745805636, guid: 2e957e66ba785a84ba9df918286924fc,
+  type: 0
+  nameString: 
+  weaponType: 2
+  equipped: 0
+  weaponprefab: {fileID: 6378847443699542620, guid: 1f5cce3d6c80eb94fbba9555e3245b1e,
     type: 3}

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d3c15f00c69bd4a87ad0596efe54aa, type: 3}
-  m_Name: Knife
+  m_Name: Humming Bird
   m_EditorClassIdentifier: 
-  type: 2
-  name: Hunting Knife
-  weaponType: 0
-  equipped: 1
-  weaponprefab: {fileID: 6447746052113049876, guid: 4a50864098545114c99648e1c2412623,
+  type: 0
+  nameString: 
+  price: 0
+  equipped: 0
+  weaponType: 2
+  weaponprefab: {fileID: 8868170899129017607, guid: 752de50345a952542b2bc7c7d665bd6e,
     type: 3}

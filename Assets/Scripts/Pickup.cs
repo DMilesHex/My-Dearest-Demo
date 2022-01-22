@@ -21,10 +21,8 @@ public class Pickup : MonoBehaviour
     public Button buy;
 
     private void Start()
-    {
-        
+    {      
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
-
     }
 
     public void DisableButton()
@@ -39,14 +37,15 @@ public class Pickup : MonoBehaviour
     public void Buy()
     {
         buy.gameObject.SetActive(false);
-        if (money.MoneyAmount >= 10.0f)
+
+        if (money.MoneyAmount >= associatedWeapon.price)
         {
             animator.SetBool("IsOpen", false);
+            money.MoneyAmount -= associatedWeapon.price;
             EnableButton();
             inventory.AddWeapon(associatedWeapon);
         }
         else
-
         {
             Shop(1);
             animator.SetBool("IsOpen", false);
@@ -57,22 +56,19 @@ public class Pickup : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Equals("Rin's Shop"))
         {
             buy.gameObject.SetActive(true);
-            Shop(0);
-
-            
+            Shop(0);            
         }
         else
         {
             EnableButton();
             inventory.AddWeapon(associatedWeapon);
-        }
-        
-        
+        }     
     }
 
     void Shop(int progression)
     {
-            animator.SetBool("IsOpen", true);
+         animator.SetBool("IsOpen", true);
+
         for (int h = 0; h < shopDialogue[0].DialogueLines.Count; h++)
         {
             Debug.Log(shopDialogue[progression].DialogueLines[h]);
@@ -91,7 +87,5 @@ public class Pickup : MonoBehaviour
 
         }
     }
-
-
-    
+ 
 }

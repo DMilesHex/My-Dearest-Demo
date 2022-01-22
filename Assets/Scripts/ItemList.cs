@@ -12,4 +12,5 @@ public abstract class ItemList : ScriptableObject
 {
     public ItemType type;
     public string nameString;
+    public float price;
 }

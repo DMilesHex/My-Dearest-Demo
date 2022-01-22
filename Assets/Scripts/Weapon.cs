@@ -12,8 +12,8 @@ public class Weapon : ItemList
         Axe,
         Blunt//...
     }
-    public WeaponType weaponType;
-    public bool equipped;
 
+    public bool equipped;
+    public WeaponType weaponType;
     public GameObject weaponprefab;
 }

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d3c15f00c69bd4a87ad0596efe54aa, type: 3}
-  m_Name: Fidget Cube
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  type: 0
-  name: Fidget Cube
-  weaponType: 2
+  type: 2
+  nameString: 
+  price: 250
   equipped: 0
-  weaponprefab: {fileID: 3485164741745805636, guid: 1f5cce3d6c80eb94fbba9555e3245b1e,
+  weaponType: 1
+  weaponprefab: {fileID: 8162265657011618563, guid: 3251f5fe205f77e4da17b3fc9a049bb1,
     type: 3}
