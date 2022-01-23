@@ -16,4 +16,5 @@ public class Weapon : ItemList
     public bool equipped;
     public WeaponType weaponType;
     public GameObject weaponprefab;
+    public float price;
 }

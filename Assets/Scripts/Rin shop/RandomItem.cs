@@ -12,9 +12,17 @@ public class RandomItem : MonoBehaviour
 
     private int number;
 
-    private void OnEnable() => TimeCycle.NewWeek += SelectRandomItem;
+    private void OnEnable()
+    {
+        TimeCycle.NewWeek += SelectRandomItem;
+        Pickup.ItemBought += DisableItem;
+    }
 
-    private void OnDisable() => TimeCycle.NewWeek -= SelectRandomItem;
+    private void OnDisable()
+    {
+        TimeCycle.NewWeek -= SelectRandomItem;
+        Pickup.ItemBought -= DisableItem;
+    }
 
 
     /// <summary> Select the random item if it's not equipped. It's also protecteed against having 1 items 2 weeks in row. </summary>
@@ -25,6 +33,7 @@ public class RandomItem : MonoBehaviour
         while (true)
         {
             int selectedNum = Random.Range(0, items.Length);
+            print(selectedNum);
 
             if(number != selectedNum && weapons[selectedNum].equipped == false)
             {
@@ -33,5 +42,11 @@ public class RandomItem : MonoBehaviour
                 break;
             }           
         }
+    }
+
+    /// <summary> Disable the item when it's bought. </summary>
+    private void DisableItem()
+    {
+        items[number].SetActive(false);
     }
 }

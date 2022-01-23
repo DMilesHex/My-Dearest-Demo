@@ -7,6 +7,12 @@ using TMPro;
 
 public class Pickup : MonoBehaviour
 {
+    public delegate void OnItemBought();
+    public static event OnItemBought ItemBought;
+
+    public delegate void OnItemBoughtPrice(float price);
+    public static event OnItemBoughtPrice ItemPrice;
+
     private InventoryScript inventory;
     public GameObject itemButton;
     public Weapon associatedWeapon;
@@ -21,11 +27,7 @@ public class Pickup : MonoBehaviour
 
     public Button buy;
 
-    private void Start()
-    {      
-       
-    }
-
+    private void Start() => inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
     public void DisableButton()
     {
         itemButton.SetActive(false);
@@ -40,12 +42,12 @@ public class Pickup : MonoBehaviour
         buy.gameObject.SetActive(false);
 
         if (money.MoneyAmount >= associatedWeapon.price)
-        {
-            
+        {      
             textBox.SetActive(false);
-            money.MoneyAmount -= associatedWeapon.price;
+            ItemPrice(associatedWeapon.price);
             EnableButton();
-            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
+            ItemBought();
+            
             inventory.AddWeapon(associatedWeapon);
         }
         else
@@ -65,7 +67,6 @@ public class Pickup : MonoBehaviour
         else
         {
             EnableButton();
-            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
             inventory.AddWeapon(associatedWeapon);
         }     
     }

@@ -25,6 +25,7 @@ public class InventoryScript : MonoBehaviour
         {
             weapon.equipped = false;
         }
+
         equippedWeapon.equipped = true;
 
         if (equippedWeapon.name == "Wood Hatchet")
@@ -56,6 +57,7 @@ public class InventoryScript : MonoBehaviour
     public void AddWeapon(Weapon weapontoadd)
     {
         InventoryList.Add(weapontoadd);
+        weapontoadd.equipped = true;
     }
 
     public void RemoveItem(Weapon itemToRemove, int itemIndex)

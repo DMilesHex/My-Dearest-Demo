@@ -16,17 +16,18 @@ public class Money : MonoBehaviour
     private void OnEnable()
     {
         player.ValueChanged += TextChanged;
+        Pickup.ItemPrice += PriceChange;
     }
 
     private void OnDisable()
     {
         player.ValueChanged -= TextChanged;
+        Pickup.ItemPrice -= PriceChange;
     }
 
     public float MoneyAmount
     {
         get { return money; }
-        set { money = MoneyAmount; }
     }
 
     private void Awake()
@@ -40,6 +41,12 @@ public class Money : MonoBehaviour
     private void TextChanged(float moneyAmount)
     {
         money = moneyAmount;
+        moneyText.text = $"${money}";
+    }
+
+    private void PriceChange(float price)
+    {
+        money -= price;
         moneyText.text = $"${money}";
     }
 
