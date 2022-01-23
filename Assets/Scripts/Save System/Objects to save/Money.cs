@@ -15,13 +15,13 @@ public class Money : MonoBehaviour
 
     private void OnEnable()
     {
-        player.ValueChanged += TextChanged;
+        player.MoneyChanged += AmountOfMoneyChanged;
         Pickup.ItemPrice += PriceChange;
     }
 
     private void OnDisable()
     {
-        player.ValueChanged -= TextChanged;
+        player.MoneyChanged -= AmountOfMoneyChanged;
         Pickup.ItemPrice -= PriceChange;
     }
 
@@ -38,22 +38,34 @@ public class Money : MonoBehaviour
         moneyText.text = $"${money}";
     }
 
-    private void TextChanged(float moneyAmount)
+    private void AmountOfMoneyChanged(float moneyAmount)
     {
         money = moneyAmount;
+       
         moneyText.text = $"${money}";
+        
     }
 
     private void PriceChange(float price)
-    {
+    {      
         money -= price;
+        saveData.Money = money;
         moneyText.text = $"${money}";
     }
 
+    /// <summary> Save the money. </summary>
+    private void SaveMoney()
+    {
+        saveData.Money = money;
+        SaveSystem.Save(saveData);
+    }
+
+    #region For Testing
     private void OnValidate()
     {
         moneyText.text = $"${money}";
     }
+    #endregion
 }
 
 

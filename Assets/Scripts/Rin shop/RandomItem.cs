@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomItem : MonoBehaviour
 {
+    #region Events
+    public delegate void BackButtonPressed();
+    /// <summary> When the player press "Go back" button </summary>
+    public static event BackButtonPressed ButtonPressed;
+    #endregion
+
     [Header("List of gameobjects available in the shop")]
     [SerializeField] private GameObject[] items;
     [Header("List of gameobjects available in the shop (Attach the scriptable object)")]
     [SerializeField] private Weapon[] weapons;
 
+    [Header("Attach canva to disable")]
+    [SerializeField] private GameObject canvaToDisable;
+
+    [Header("Go back button")]
+    [SerializeField] private GameObject backButton;
 
     private int number;
 
@@ -16,12 +28,16 @@ public class RandomItem : MonoBehaviour
     {
         TimeCycle.NewWeek += SelectRandomItem;
         Pickup.ItemBought += DisableItem;
+        Pickup.DisableCanva += DisableCanva;
+        Pickup.EnableCanva += EnableCanva;
     }
 
     private void OnDisable()
     {
         TimeCycle.NewWeek -= SelectRandomItem;
         Pickup.ItemBought -= DisableItem;
+        Pickup.DisableCanva -= DisableCanva;
+        Pickup.EnableCanva -= EnableCanva;
     }
 
 
@@ -44,9 +60,24 @@ public class RandomItem : MonoBehaviour
         }
     }
 
-    /// <summary> Disable the item when it's bought. </summary>
-    private void DisableItem()
+    /// <summary> Disable the active item </summary>
+    private void DisableItem() => items[number].SetActive(false);
+
+    /// <summary> Disable the canva. </summary>
+    private void DisableCanva()
     {
-        items[number].SetActive(false);
+        backButton.SetActive(true);
+        canvaToDisable.SetActive(false);
+        DisableItem();
+    }
+
+    /// <summary> Enable the canva. </summary>
+    private void EnableCanva() => canvaToDisable.SetActive(true);
+
+    /// <summary> When the player does not wanna buy the item, go back to the shop.  </summary>
+    public void GoBack()
+    {
+        backButton.SetActive(false);
+        EnableCanva();
     }
 }

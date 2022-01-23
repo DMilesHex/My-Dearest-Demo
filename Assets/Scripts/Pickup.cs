@@ -7,73 +7,78 @@ using TMPro;
 
 public class Pickup : MonoBehaviour
 {
+    #region Events
     public delegate void OnItemBought();
+    /// <summary> Item has been bought. </summary>
     public static event OnItemBought ItemBought;
+    /// <summary> Disable the canva, so the dialogue can be shown. </summary>
+    public static event OnItemBought DisableCanva;
+    /// <summary> Ënablle the disabled canva. </summary>
+    public static event OnItemBought EnableCanva;
 
     public delegate void OnItemBoughtPrice(float price);
+    /// <summary> Item was bought, decreased the money. </summary>
     public static event OnItemBoughtPrice ItemPrice;
+    #endregion
 
+    #region Variables
     private InventoryScript inventory;
-    public GameObject itemButton;
-    public Weapon associatedWeapon;
-
-    public List<DialogueObject> shopDialogue;
-    public TMP_Text dialogueText;
-    public TMP_Text nameText;
-
+    [SerializeField] private GameObject itemButton;
+    [SerializeField] private Weapon associatedWeapon;
     [SerializeField] private Money money;
-
-    public GameObject textBox;
-
-    public Button buy;
+    [Header("Dialogues")]
+    [SerializeField] private List<DialogueObject> shopDialogue;
+    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private GameObject textBox;
+    [Header("Buttons")]
+    [SerializeField] private Button buyButton;
+    #endregion
 
     private void Start() => inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
-    public void DisableButton()
-    {
-        itemButton.SetActive(false);
-        
-    }
-    public void EnableButton()
-    {
-        itemButton.SetActive(true);
-    }
+
+    private void OnEnable() => RandomItem.ButtonPressed += GoBack;
+
+    private void OnDisable() => RandomItem.ButtonPressed -= GoBack;
+
+    public void DisableButton() => itemButton.SetActive(false);  
+    public void EnableButton() => itemButton.SetActive(true);
+
     public void Buy()
     {
-        buy.gameObject.SetActive(false);
+        buyButton.gameObject.SetActive(false);      
 
         if (money.MoneyAmount >= associatedWeapon.price)
-        {      
-            textBox.SetActive(false);
+        {
+            HandleTextBox(false);
             ItemPrice(associatedWeapon.price);
             EnableButton();
-            ItemBought();
             
+            ItemBought();
+            EnableCanva();
             inventory.AddWeapon(associatedWeapon);
         }
-        else
-        {
-            Shop(1);
-            textBox.SetActive(false);
-            
-        }
+
+        Shop(1);
+         HandleTextBox(false);  
     }
-    public void AddUI()
+
+    public void ShowUI()
     {
         if (SceneManager.GetActiveScene().name.Equals("Rin's Shop"))
         {
-            buy.gameObject.SetActive(true);
+            DisableCanva();
+            buyButton.gameObject.SetActive(true);
             Shop(0);            
         }
-        else
-        {
-            EnableButton();
-            inventory.AddWeapon(associatedWeapon);
-        }     
+
+        EnableButton();
+        inventory.AddWeapon(associatedWeapon);         
     }
 
-    void Shop(int progression)
+    private void Shop(int progression)
     {
-        textBox.SetActive(true);
+        HandleTextBox(true);
 
         for (int h = 0; h < shopDialogue[0].DialogueLines.Count; h++)
         {
@@ -81,7 +86,6 @@ public class Pickup : MonoBehaviour
             dialogueText.text = shopDialogue[progression].DialogueLines[h].LineText;
             nameText.text = shopDialogue[progression].DialogueLines[h].NpcName.ToString();         
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -89,9 +93,22 @@ public class Pickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            AddUI();
-
+            ShowUI();
         }
     }
- 
+
+    private void GoBack()
+    {
+        buyButton.gameObject.SetActive(false);
+        HandleTextBox(false);
+    }
+
+    #region Stuff to make the life easier
+    /// <summary> Enable or disable the textboxt. </summary>
+    /// <param name="value">True or false</param>
+    private void HandleTextBox(bool value)
+    {
+        textBox.SetActive(value);
+    }
+    #endregion
 }

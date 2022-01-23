@@ -40,7 +40,7 @@ public class DialogueUI : MonoBehaviour
     
     public void ClubRep(int index)
     {
-        dialogueActivator[index].rep += 5;
+        dialogueActivator[index].Rep += 5;
 
 
     }
@@ -54,8 +54,8 @@ public class DialogueUI : MonoBehaviour
     {
         if (player.canGainRep && dialogueObject.RepFactor != 0)
         {
-            dialogueActivator[index].rep += dialogueObject.RepFactor + player.repIncrease;
-            rm.ChangeRep(dialogueActivator[index].rep);
+            dialogueActivator[index].Rep += dialogueObject.RepFactor + player.repIncrease;
+            rm.ChangeRep(dialogueActivator[index].Rep);
         }
         if (dialogueObject.Target != null)
             dialogueObject.Target.pop += dialogueObject.StudentPop;

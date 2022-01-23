@@ -7,22 +7,15 @@ using UnityEngine.UI;
 public class DialogueActivator : MonoBehaviour, I_Interactable
 {
     [SerializeField] private DialogueObject dialogueObject;
-    public int rep;
-    public int pop;
+    public int Rep;
+    [SerializeField] private int pop;
 
     
-    public RectTransform canvas, buttonPrompt;
-    private GameObject promptPrefab;
-    public int studentIndex;
+    [SerializeField] private RectTransform canvas, buttonPrompt;
+    [SerializeField] private GameObject promptPrefab;
+    [SerializeField] private int studentIndex;
     
-
-
-
-    public void UpdateDialogueObject(DialogueObject dialogueObject)
-    {
-        this.dialogueObject = dialogueObject;
-    }
-
+    public void UpdateDialogueObject(DialogueObject dialogueObject) => this.dialogueObject = dialogueObject;
     public void Interact(player pl)
     {
         DialogueResponseEvents dialogue = GetComponent<DialogueResponseEvents>();
@@ -55,10 +48,9 @@ public class DialogueActivator : MonoBehaviour, I_Interactable
         if (collision.CompareTag("Player"))
         {
             player pl = collision.GetComponent<player>();
+
             if (pl.interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
-            {
                 pl.interactable = null;
-            }
 
             Destroy(promptPrefab);
         }

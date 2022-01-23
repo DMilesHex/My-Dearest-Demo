@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class player : MonoBehaviour
 {
     public delegate void OnMoneyChanged(float amount);
-    public static event OnMoneyChanged ValueChanged;
+    public static event OnMoneyChanged MoneyChanged;
 
     #region Variables
     [Header("Movement")]
@@ -67,18 +67,18 @@ public class player : MonoBehaviour
     private Animator anim;
     private GameObject promptPrefab;
     #endregion
+
     public void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = this.GetComponent<Animator>();
+        inventory = GameObject.FindWithTag("Inventory").GetComponent<InventoryScript>();
         Sanity = SanityMax;
     }
 
     public void Equip(int equipnumber)
-    {
-        inventory = GameObject.FindWithTag("Inventory").GetComponent<InventoryScript>();
+    {       
         Weapon weapontoequip = inventory.InventoryList[equipnumber];
-
         weaponheld = weapontoequip.weaponprefab;
     }
 
@@ -112,7 +112,7 @@ public class player : MonoBehaviour
         else
         {
             button.interactable = studyPoints > 0;
-            button2.interactable = dialogueActivator.rep > 20;
+            button2.interactable = dialogueActivator.Rep > 20;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && Time.timeScale > 0)
@@ -131,10 +131,7 @@ public class player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        MoveCharacter(movement);  
-    }  
+    void FixedUpdate() => MoveCharacter(movement);    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -153,7 +150,6 @@ public class player : MonoBehaviour
             chopped = true;
             anim.SetBool("isChopped", true);
         }
-
     }
 
     private void MoveCharacter(Vector2 direction)
@@ -161,21 +157,9 @@ public class player : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
     }
 
-    public void AddStudyPoints(int amount)
-    {
-        studyPoints += amount; 
-    }
-
-    public void ExtraRepPoints()
-    {
-        repIncrease = 5;
-    }
-
-    public void SanityRestore()
-    {
-        Sanity = SanityMax;
-    }
-
+    public void AddStudyPoints(int amount) => studyPoints += amount; 
+    public void ExtraRepPoints() => repIncrease = 5;
+    public void SanityRestore() => Sanity = SanityMax;
     public void MakeMoney()
     {
         responseContainer.SetActive(false);
@@ -184,13 +168,13 @@ public class player : MonoBehaviour
 
     public void Tutor()
     {
-        ValueChanged(100);
+        MoneyChanged(100);
         EndDay();
     }
 
     public void Job()
     {
-        ValueChanged(30);
+        MoneyChanged(30);
         EndDay();
     }
 
@@ -199,7 +183,7 @@ public class player : MonoBehaviour
         float troubleChance = Random.value;
         if (troubleChance > 0.3)
         {
-            ValueChanged(50);
+            MoneyChanged(50);
             return;
         }
         else if (troubleChance < 0.05)

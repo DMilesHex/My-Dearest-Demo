@@ -6,13 +6,10 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    public GameObject loadingScreen;
-    public Slider slider;
+    [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private Slider slider;
 
-    public void LoadLevel(int sceneIndex)
-    {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
-    }
+    public void LoadLevel(int sceneIndex) => StartCoroutine(LoadAsynchronously(sceneIndex));
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
