@@ -18,7 +18,7 @@ public class HabikiTutor : MonoBehaviour
     public void WrongAnswers()
     {
         tutorQuestDone = true;
-        dialogueActivator.pop -= 5;
+        dialogueActivator.Pop -= 5;
         tutorButtons.SetActive(false);
     }
 }

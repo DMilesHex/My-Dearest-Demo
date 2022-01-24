@@ -58,7 +58,7 @@ public class DialogueUI : MonoBehaviour
             rm.ChangeRep(dialogueActivator[index].Rep);
         }
         if (dialogueObject.Target != null)
-            dialogueObject.Target.pop += dialogueObject.StudentPop;
+            dialogueObject.Target.Pop += dialogueObject.StudentPop;
 
         for (int i = 0; i < dialogueObject.DialogueLines.Count; i++)
         {

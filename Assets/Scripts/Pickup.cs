@@ -15,6 +15,8 @@ public class Pickup : MonoBehaviour
     public static event OnItemBought DisableCanva;
     /// <summary> Ënablle the disabled canva. </summary>
     public static event OnItemBought EnableCanva;
+    /// <summary> Item hasn't been bought. </summary>
+    public static event OnItemBought ItemNotBought;
 
     public delegate void OnItemBoughtPrice(float price);
     /// <summary> Item was bought, decreased the money. </summary>
@@ -37,10 +39,6 @@ public class Pickup : MonoBehaviour
 
     private void Start() => inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
 
-    private void OnEnable() => RandomItem.ButtonPressed += GoBack;
-
-    private void OnDisable() => RandomItem.ButtonPressed -= GoBack;
-
     public void DisableButton() => itemButton.SetActive(false);  
     public void EnableButton() => itemButton.SetActive(true);
 
@@ -58,9 +56,13 @@ public class Pickup : MonoBehaviour
             EnableCanva();
             inventory.AddWeapon(associatedWeapon);
         }
-
-        Shop(1);
-         HandleTextBox(false);  
+        else 
+        {
+            Shop(1);
+            EnableCanva();
+            ItemNotBought();
+            HandleTextBox(false);
+        }
     }
 
     public void ShowUI()
@@ -71,9 +73,11 @@ public class Pickup : MonoBehaviour
             buyButton.gameObject.SetActive(true);
             Shop(0);            
         }
-
-        EnableButton();
-        inventory.AddWeapon(associatedWeapon);         
+        else
+        {
+            EnableButton();
+            inventory.AddWeapon(associatedWeapon);
+        }       
     }
 
     private void Shop(int progression)
@@ -95,12 +99,6 @@ public class Pickup : MonoBehaviour
             Destroy(gameObject);
             ShowUI();
         }
-    }
-
-    private void GoBack()
-    {
-        buyButton.gameObject.SetActive(false);
-        HandleTextBox(false);
     }
 
     #region Stuff to make the life easier

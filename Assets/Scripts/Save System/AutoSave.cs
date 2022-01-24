@@ -25,10 +25,12 @@ public class AutoSave : MonoBehaviour
         {
             time += Time.deltaTime;
         }
-
-        Save();
-        print("saved");
-        time = 0;      
+        else 
+        {
+            Save();
+            print("saved");
+            time = 0;
+        }        
     }
 
     /// <summary> Save the data </summary>
