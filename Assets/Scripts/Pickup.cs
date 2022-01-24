@@ -39,10 +39,6 @@ public class Pickup : MonoBehaviour
 
     private void Start() => inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryScript>();
 
-    //private void OnEnable() => RandomItem.ButtonPressed += GoBack;
-
-    //private void OnDisable() => RandomItem.ButtonPressed -= GoBack;
-
     public void DisableButton() => itemButton.SetActive(false);  
     public void EnableButton() => itemButton.SetActive(true);
 
@@ -67,8 +63,6 @@ public class Pickup : MonoBehaviour
             ItemNotBought();
             HandleTextBox(false);
         }
-
-
     }
 
     public void ShowUI()
@@ -83,9 +77,7 @@ public class Pickup : MonoBehaviour
         {
             EnableButton();
             inventory.AddWeapon(associatedWeapon);
-        }
-
-             
+        }       
     }
 
     private void Shop(int progression)
@@ -108,12 +100,6 @@ public class Pickup : MonoBehaviour
             ShowUI();
         }
     }
-
-    //private void GoBack()
-    //{
-    //    buyButton.gameObject.SetActive(false);
-    //    HandleTextBox(false);
-    //}
 
     #region Stuff to make the life easier
     /// <summary> Enable or disable the textboxt. </summary>
