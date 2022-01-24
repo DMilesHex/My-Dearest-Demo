@@ -30,6 +30,7 @@ public class RandomItem : MonoBehaviour
         Pickup.ItemBought += DisableItem;
         Pickup.DisableCanva += DisableCanva;
         Pickup.EnableCanva += EnableCanva;
+        Pickup.ItemNotBought += ItemNotBought;
     }
 
     private void OnDisable()
@@ -38,6 +39,7 @@ public class RandomItem : MonoBehaviour
         Pickup.ItemBought -= DisableItem;
         Pickup.DisableCanva -= DisableCanva;
         Pickup.EnableCanva -= EnableCanva;
+        Pickup.ItemNotBought -= ItemNotBought;
     }
 
 
@@ -66,7 +68,7 @@ public class RandomItem : MonoBehaviour
     /// <summary> Disable the canva. </summary>
     private void DisableCanva()
     {
-        backButton.SetActive(true);
+        //backButton.SetActive(true);
         canvaToDisable.SetActive(false);
         DisableItem();
     }
@@ -74,10 +76,13 @@ public class RandomItem : MonoBehaviour
     /// <summary> Enable the canva. </summary>
     private void EnableCanva() => canvaToDisable.SetActive(true);
 
-    /// <summary> When the player does not wanna buy the item, go back to the shop.  </summary>
-    public void GoBack()
-    {
-        backButton.SetActive(false);
-        EnableCanva();
-    }
+    private void ItemNotBought() => items[number].SetActive(true);
+
+    ///// <summary> When the player does not wanna buy the item, go back to the shop.  </summary>
+    //public void GoBack()
+    //{
+    //    backButton.SetActive(false);
+    //    EnableCanva();
+    //    ButtonPressed();
+    //}
 }
