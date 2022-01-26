@@ -5,40 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private string sceneToLoad;
-    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private AutoSave autoSave;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        menu.SetActive(false);
-    }
+    private void Awake() => pauseMenu.SetActive(false);
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {           
-            if (menu.activeSelf)
-            {
-                menu.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else
-            {
-                menu.SetActive(true);
-                Time.timeScale = 0;
-            }
+        if (!Input.GetKeyDown(KeyCode.Escape))
+            return;
+
+        if (pauseMenu.activeSelf) 
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else 
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
     public void Resume()
     {
-        menu.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
-    public void Leave()
+
+    public void Quit()
     {
-        PlayerTransporter.LoadMap(sceneToLoad);
-        Destroy(gameObject);
+        autoSave.Save();
+        Application.Quit();
     }
 }

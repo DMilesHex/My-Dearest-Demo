@@ -34,7 +34,7 @@ public class AutoSave : MonoBehaviour
     }
 
     /// <summary> Save the data </summary>
-    private void Save()
+    public void Save()
     {
         saveData.Money = money.MoneyAmount;
         saveData.Day = timeCycle.Day;

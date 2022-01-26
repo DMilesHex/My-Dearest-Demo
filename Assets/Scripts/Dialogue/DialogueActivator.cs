@@ -8,7 +8,7 @@ public class DialogueActivator : MonoBehaviour, I_Interactable
 {
     [SerializeField] private DialogueObject dialogueObject;
     public int Rep;
-    public int pop;
+    public int Pop;
 
     
     [SerializeField] private RectTransform canvas, buttonPrompt;
