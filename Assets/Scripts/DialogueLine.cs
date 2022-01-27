@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum NpcName
 {
-    Manami, Habiki, Ryo, Narration, Rin, Kyoko //...
+    Manami, Habiki, Ryo, Narration, Rin, Kyoko, Minori, Kazou //...
 }
 
 [Serializable]
