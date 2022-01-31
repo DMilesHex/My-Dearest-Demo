@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3721772622554787513}
   - component: {fileID: 1845021333042332658}
   - component: {fileID: 541745689393024954}
-  - component: {fileID: 4729404768243887425}
+  - component: {fileID: 8040336768392712351}
   - component: {fileID: 7514243679907501437}
   m_Layer: 9
   m_Name: Minori
@@ -126,12 +126,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: bbdd543933eb4af47b4096b33d038999, type: 2}
-  rep: 0
-  pop: 0
-  keyText: {fileID: 6611900123297023844, guid: a295fe16f9db1df47be87c162e17a7da, type: 3}
-  helpText: {fileID: 228093217629156261, guid: f59877f4b37a5074f996174c900ca060, type: 3}
+  Rep: 0
+  Pop: 0
+  canvas: {fileID: 0}
   buttonPrompt: {fileID: 7860337397109333442, guid: 2e5183ec33063b64f85ce6e00421515d,
     type: 3}
+  promptPrefab: {fileID: 0}
+  studentIndex: 0
 --- !u!95 &541745689393024954
 Animator:
   serializedVersion: 3
@@ -151,7 +152,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4729404768243887425
+--- !u!114 &8040336768392712351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,9 +161,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1798651225726523288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53bcadb8d41c2d438d78183f9b501d0, type: 3}
+  m_Script: {fileID: 11500000, guid: e725f821f7229db44b6e03ab138fb412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tc: {fileID: 0}
 --- !u!114 &7514243679907501437
 MonoBehaviour:
   m_ObjectHideFlags: 0

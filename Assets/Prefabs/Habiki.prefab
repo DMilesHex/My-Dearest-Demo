@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6764827563373546854}
   - component: {fileID: 6764827563373546855}
   - component: {fileID: 6764827563373546851}
-  - component: {fileID: 6764827563373546850}
+  - component: {fileID: 1805538517648080552}
   - component: {fileID: 7293855656627743944}
   - component: {fileID: 2750723528056105733}
   m_Layer: 9
@@ -128,13 +128,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: bbdd543933eb4af47b4096b33d038999, type: 2}
-  rep: 0
-  pop: 0
-  key: {fileID: 6611900123297023844, guid: a295fe16f9db1df47be87c162e17a7da, type: 3}
-  help: {fileID: 228093217629156261, guid: f59877f4b37a5074f996174c900ca060, type: 3}
+  Rep: 0
+  Pop: 0
   canvas: {fileID: 0}
   buttonPrompt: {fileID: 7860337397109333443, guid: 2e5183ec33063b64f85ce6e00421515d,
     type: 3}
+  promptPrefab: {fileID: 0}
   studentIndex: 0
 --- !u!95 &6764827563373546851
 Animator:
@@ -155,7 +154,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6764827563373546850
+--- !u!114 &1805538517648080552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,9 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6764827563373546852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53bcadb8d41c2d438d78183f9b501d0, type: 3}
+  m_Script: {fileID: 11500000, guid: e725f821f7229db44b6e03ab138fb412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tc: {fileID: 0}
 --- !u!114 &7293855656627743944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,9 +244,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c33b8bd0c2d3b84b9cea1f70f57d857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeGift: 0
   startDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  removeGift:
+    m_PersistentCalls:
+      m_Calls: []
+  removeWeapon:
     m_PersistentCalls:
       m_Calls: []
   pl: {fileID: 5477995735012788432, guid: 4a4c06128a8f0bf49932317acd04d1a0, type: 3}
   met: 0
+  knife: {fileID: 0}
+  an: {fileID: 0}
