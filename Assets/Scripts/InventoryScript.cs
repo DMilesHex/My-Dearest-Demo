@@ -12,6 +12,12 @@ public class InventoryScript : MonoBehaviour
 
     public List<Weapon> InventoryList { get => inventoryList; set => inventoryList = value; }
 
+    private SaveData saveData;
+    private void Awake()
+    {
+        saveData = SaveSystem.Load();
+    }
+
     public void Remove(int index)
     {
        RemoveItem(InventoryList[index], index);
@@ -50,8 +56,6 @@ public class InventoryScript : MonoBehaviour
             Debug.Log("charm in hand");
             weaponSprites[2].SetActive(true);
         }
-
-
     }
 
     public void AddWeapon(Weapon weapontoadd)
@@ -62,11 +66,12 @@ public class InventoryScript : MonoBehaviour
 
     public void RemoveItem(Weapon itemToRemove, int itemIndex)
     {
-        Debug.Log("stuff");
         if (GameObject.Find(itemToRemove.weaponprefab.name))
         {
             Debug.Log("deleted");
+            saveData.WeaponsID.Remove(itemToRemove.ID);
             InventoryList.Remove(itemToRemove);
+            SaveSystem.Save(saveData);
         }
         weaponSprites[itemIndex].SetActive(false);
     }

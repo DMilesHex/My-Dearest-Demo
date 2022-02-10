@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   nameString: 
-  equipped: 1
+  ID: 3
+  equipped: 0
   weaponType: 2
   weaponprefab: {fileID: 8868170899129017607, guid: 752de50345a952542b2bc7c7d665bd6e,
     type: 3}

@@ -42,6 +42,10 @@ public class Pickup : MonoBehaviour
     public void DisableButton() => itemButton.SetActive(false);  
     public void EnableButton() => itemButton.SetActive(true);
 
+    private SaveData saveData;
+
+    private void Awake() => saveData = SaveSystem.Load();
+
     public void Buy()
     {
         buyButton.gameObject.SetActive(false);      
@@ -55,6 +59,8 @@ public class Pickup : MonoBehaviour
             ItemBought();
             EnableCanva();
             inventory.AddWeapon(associatedWeapon);
+            saveData.WeaponsID.Add(associatedWeapon.ID);
+            SaveSystem.Save(saveData);
         }
         else 
         {

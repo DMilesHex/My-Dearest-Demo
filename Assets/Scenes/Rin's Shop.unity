@@ -1824,6 +1824,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3628586260091514987, guid: 7d0825ccce6c547448e2e5ce5c321277,
+        type: 3}
+      propertyPath: weaponSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1774042057}
     - target: {fileID: 4446009873445627496, guid: 7d0825ccce6c547448e2e5ce5c321277,
         type: 3}
       propertyPath: m_AnchoredPosition.x

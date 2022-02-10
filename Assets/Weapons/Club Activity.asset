@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Club Activity
   m_EditorClassIdentifier: 
   type: 0
-  name: Club Activity
-  weaponType: 2
+  nameString: 
+  ID: 1
   equipped: 0
+  weaponType: 2
   weaponprefab: {fileID: 0}
+  price: 0

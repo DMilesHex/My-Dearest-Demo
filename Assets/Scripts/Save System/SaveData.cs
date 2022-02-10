@@ -15,6 +15,8 @@ public class SaveData
     public int Quality;
     /// <summary>The volume.</summary>
     public float Volume;
+    /// <summary>ID's of the active weapons.</summary>
+    public List<int> WeaponsID;
 
     /// <summary>Creates a brand new, empty save file.</summary>
     public SaveData()
@@ -33,12 +35,13 @@ public class SaveData
     /// <param name="savedDay">The amount of saved days. </param>
     /// <param name="savedQuality">The quality of graphic which was saved.</param>
     /// <param name="savedVolume">The saved volume from settings.</param>
-    public SaveData(float savedMoney, int savedDay, int savedWeek, int savedQuality, int savedVolume)
+    public SaveData(float savedMoney, int savedDay, int savedWeek, int savedQuality, int savedVolume, List<int> savedIDs)
     {
         Money = savedMoney;
         Day = savedDay;
         Week = savedWeek;
         Quality = savedQuality;
-        Volume = savedVolume; 
+        Volume = savedVolume;
+        WeaponsID = savedIDs;
     }
 }

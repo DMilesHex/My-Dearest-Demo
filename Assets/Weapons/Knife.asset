@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   nameString: 
-  price: 0
-  equipped: 1
+  ID: 4
+  equipped: 0
   weaponType: 0
   weaponprefab: {fileID: 6447746052113049876, guid: 4a50864098545114c99648e1c2412623,
     type: 3}
+  price: 0
