@@ -20,7 +20,10 @@ public class Quest : MonoBehaviour
 
 
     public static bool OnQuest;
-
+    public static bool HabikiOnQuest = false;
+    public static bool KazouOnQuest = false;
+    public static bool RinOnQuest = false;
+    public static bool MinoriOnQuest = false;
     private void Awake()
     {
         questUIText.text = questInfo;
@@ -34,13 +37,28 @@ public class Quest : MonoBehaviour
 
     private void QuestStarted()
     {
-        OnQuest = quests switch
+        OnQuest = true;
+
+        switch (quests)
         {
-            Quests.Habiki => true,
-            Quests.Kazou => true,
-            Quests.Rin => true,
-            Quests.Minori => true,
-            _ => false,
-        };
+            case Quests.Habiki:
+                HabikiOnQuest = true;
+                break;
+            case Quests.Kazou:
+                KazouOnQuest = true;
+                break;
+            case Quests.Rin:
+                RinOnQuest = true;
+                break;
+            case Quests.Minori:
+                MinoriOnQuest = true;
+                break;
+            default:
+                HabikiOnQuest = false;
+                KazouOnQuest = false;
+                RinOnQuest = false;
+                MinoriOnQuest = false;
+                break;
+        }
     }
 }
