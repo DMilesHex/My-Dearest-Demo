@@ -61,6 +61,7 @@ public class player : MonoBehaviour
     public I_Interactable interactable { get; set; }
     public AddPoints add;
     public int psych, bio;
+    public List<UnityEvent> win;
 
     //Private variables
     private Rigidbody2D rb;
@@ -127,7 +128,19 @@ public class player : MonoBehaviour
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
+            {
                 litter = true;
+                dialogueActivator.Pop -= 5;
+            }
+        }
+
+        if (dialogueActivator.Rep >= 15)
+        {
+            win[1].Invoke();
+        }
+        if (dialogueActivator.Pop <= -10)
+        {
+            win[2].Invoke();
         }
     }
 
@@ -201,8 +214,8 @@ public class player : MonoBehaviour
 
     public void Invite()
     {
-        Debug.Log("Habiki greatly appreciates all you have done for her. She will stay away from Ryo.");
-        EndDay();
+        win[0].Invoke();
+        
     }
 
     public void StatDist(int index)

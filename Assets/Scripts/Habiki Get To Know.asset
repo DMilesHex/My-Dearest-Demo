@@ -12,29 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482afdea677fec04381c562d308bac77, type: 3}
   m_Name: Habiki Get To Know
   m_EditorClassIdentifier: 
-  repFactor: 0
+  repFactor: 2
+  studentPop: 0
+  target: {fileID: 0}
   _dialogueLine:
-  - _npcName: 0
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: 'So, what''s been going on with you lately? '
-  - _npcName: 3
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: 'Habiki shifts uncomfortably. Something is clearly wrong, and she
       seems to be debating whether to bring it up. '
-  - _npcName: 1
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: 'Well... do you know Kyoko? Sh-she''s been insulting me about... my
       family. '
-  - _npcName: 3
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: She looks down, almost curling in on herself. Manami looks at her
       with deep concern.
-  - _npcName: 0
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: What's wrong with your family?
-  - _npcName: 1
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: 'We don''t talk v-...very much. And when we do, they''re not happy
       with me. '
-  - _npcName: 0
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: 'I''m sorry. Hey, maybe we can hang out sometime. Give you a break
       from them, yeah? '
-  - _npcName: 3
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: 'Habiki''s face brightens slightly. She looks at Manami hopefully. '
-  - _npcName: 1
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: '... Thanks, Manami. '
   responses: []

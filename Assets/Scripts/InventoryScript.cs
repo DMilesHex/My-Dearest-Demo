@@ -26,7 +26,7 @@ public class InventoryScript : MonoBehaviour
 
     public void OnClickButton(Weapon equippedWeapon)
     {
-        Debug.Log("Just do something please");
+        
         foreach (Weapon weapon in InventoryList)
         {
             weapon.equipped = false;
@@ -34,24 +34,24 @@ public class InventoryScript : MonoBehaviour
 
         equippedWeapon.equipped = true;
 
-        if (equippedWeapon.name == "Wood Hatchet")
+        if (equippedWeapon.nameString == "Wood Hatchet")
         {
             Debug.Log("Axe in hand");
             weaponSprites[1].SetActive(true);
         }
-        else if (equippedWeapon.name == "Fidget Cube")
+        else if (equippedWeapon.nameString == "Fidget Cube")
         {
             if (player.Sanity <= player.SanityMax - 10)
                 player.Sanity += 10;
             equippedWeapon.equipped = false;
             Debug.Log(player.Sanity);
         }
-        else if (equippedWeapon.name == "Hunting Knife")
+        else if (equippedWeapon.nameString == "Hunting Knife")
         {
             Debug.Log("Knife in hand");
             weaponSprites[0].SetActive(true);
         }
-        else if (equippedWeapon.name == "Humming Bird Charm")
+        else if (equippedWeapon.nameString == "Humming Bird Charm")
         {
             Debug.Log("charm in hand");
             weaponSprites[2].SetActive(true);

@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Rin shop\RandomItem.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\ShopTransport.cs" />
     <Compile Include="Assets\Scripts\Dialogue\ResponseHandler.cs" />
     <Compile Include="Assets\Scripts\Dialogue\TypewriterEffect.cs" />
     <Compile Include="Assets\Scripts\DialogueLine.cs" />
@@ -99,8 +100,14 @@
     <Compile Include="Assets\Scripts\InsanityEffects.cs" />
     <Compile Include="Assets\Scripts\RivalInfo.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueUI.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\House.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+=======
+    <Compile Include="Assets\Scripts\Schedules.cs" />
+    <Compile Include="Assets\Scripts\House.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

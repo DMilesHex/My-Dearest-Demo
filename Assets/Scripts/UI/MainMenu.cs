@@ -83,12 +83,12 @@ public class MainMenu : MonoBehaviour
         if (saveData.Day == 0)
         {
             continueButton.interactable = false;
-            continueButton.GetComponentInChildren<Text>().color = new Color(1, 1, 1, .5f);
+            continueButton.GetComponentInChildren<Image>().color = new Color(1, 1, 1, .5f);
         }
         else if (saveData.Day >= 1)
         {
             continueButton.interactable = true;
-            continueButton.GetComponentInChildren<Text>().color = Color.white;
+            continueButton.GetComponentInChildren<Image>().color = Color.white;
         }
     }
 }

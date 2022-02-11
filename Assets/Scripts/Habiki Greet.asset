@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: Habiki Greet
   m_EditorClassIdentifier: 
   repFactor: 1
+  studentPop: 0
+  target: {fileID: 0}
   _dialogueLine:
-  - _npcName: 0
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: Hey Habiki! How's the birdwatching coming?
-  - _npcName: 1
+  - npcName: 1
+    portrait: {fileID: 0}
     _lineText: 'O-oh, it''s OK. I saw a really n-nice bird yesterday. '
-  - _npcName: 0
+  - npcName: 0
+    portrait: {fileID: 0}
     _lineText: That's great to hear. Enjoy!
   responses: []

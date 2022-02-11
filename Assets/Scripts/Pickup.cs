@@ -42,10 +42,20 @@ public class Pickup : MonoBehaviour
     public void DisableButton() => itemButton.SetActive(false);  
     public void EnableButton() => itemButton.SetActive(true);
 
+<<<<<<< Updated upstream
     private SaveData saveData;
 
     private void Awake() => saveData = SaveSystem.Load();
 
+=======
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            PlayerTransporter.LoadMap("SampleScene");
+        }
+    }
+>>>>>>> Stashed changes
     public void Buy()
     {
         buyButton.gameObject.SetActive(false);      

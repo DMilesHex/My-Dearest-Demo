@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
+
 
 public class TimeCycle : MonoBehaviour
 {
@@ -40,7 +41,10 @@ public class TimeCycle : MonoBehaviour
         days = saveData.Day;
         weeks = saveData.Week;
         weekText.text = "Week " + saveData.Week;
-        NewWeek();
+        if (SceneManager.GetActiveScene().name == "Rin's Shop")
+        {
+            NewWeek();
+        }
     }
     // Update is called once per frame
     void Update()
