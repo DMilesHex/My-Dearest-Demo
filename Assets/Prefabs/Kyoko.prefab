@@ -198,10 +198,10 @@ MonoBehaviour:
     onPickedResponse:
       m_PersistentCalls:
         m_Calls: []
-<<<<<<< Updated upstream
+
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-=======
+
 --- !u!114 &1283656082443092257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,4 +220,4 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   sanityLevel: 60
   an: {fileID: 0}
->>>>>>> Stashed changes
+
